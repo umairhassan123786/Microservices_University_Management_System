@@ -1,0 +1,626 @@
+2025-10-26 11:30:51.201 [,] [main] INFO  c.u.StudentServiceApplication - Starting StudentServiceApplication using Java 17.0.12 on DESKTOP-F6DKP9F with PID 24488 (D:\aksa sds\University Management System Microservices\University-Backend\student-service\target\classes started by user in D:\aksa sds\University Management System Microservices\University-Backend)
+2025-10-26 11:30:51.216 [,] [main] INFO  c.u.StudentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-26 11:30:51.363 [,] [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2025-10-26 11:30:51.364 [,] [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2025-10-26 11:30:51.366 [,] [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@2fd1731c uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/student-service/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2025-10-26 11:30:51.366 [,] [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2025-10-26 11:30:51.366 [,] [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2025-10-26 11:30:51.367 [,] [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@59aa20b3 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/student-service/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2025-10-26 11:30:51.367 [,] [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2025-10-26 11:30:51.367 [,] [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2025-10-26 11:30:51.367 [,] [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@363f6148 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/student-service/default": Connection refused: no further information; nested exception is java.net.ConnectException: Connection refused: no further information
+2025-10-26 11:30:53.924 [,] [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-26 11:30:54.320 [,] [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 350 ms. Found 1 JPA repository interfaces.
+2025-10-26 11:30:55.464 [,] [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=39dd7bc5-69e1-3408-89aa-841ed170deb2
+2025-10-26 11:30:57.424 [,] [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8082 (http)
+2025-10-26 11:30:57.441 [,] [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-26 11:30:57.441 [,] [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-10-26 11:30:57.938 [,] [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-26 11:30:57.938 [,] [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6567 ms
+2025-10-26 11:31:00.254 [,] [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-26 11:31:00.638 [,] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-26 11:31:01.390 [,] [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-26 11:31:01.829 [,] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-26 11:31:03.275 [,] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-26 11:31:03.321 [,] [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2025-10-26 11:31:06.471 [,] [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-26 11:31:06.491 [,] [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-26 11:31:07.563 [,] [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-26 11:31:07.773 [,] [main] INFO  o.s.c.o.FeignClientFactoryBean - For 'course-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-26 11:31:07.919 [,] [main] INFO  o.s.c.o.FeignClientFactoryBean - For 'attendance-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-26 11:31:07.964 [,] [main] INFO  o.s.c.o.FeignClientFactoryBean - For 'teacher-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-26 11:31:11.247 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-10-26 11:31:11.360 [,] [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-10-26 11:31:12.749 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-10-26 11:31:12.971 [,] [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-26 11:31:13.117 [,] [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-10-26 11:31:13.184 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-10-26 11:31:13.194 [,] [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 11:31:13.235 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-10-26 11:31:13.236 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-10-26 11:31:13.236 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-10-26 11:31:13.236 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-10-26 11:31:13.236 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-10-26 11:31:13.236 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-10-26 11:31:13.236 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-10-26 11:31:13.716 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-10-26 11:31:13.722 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-10-26 11:31:13.727 [,] [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-26 11:31:13.735 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1761460273735 with initial instances count: 2
+2025-10-26 11:31:13.759 [,] [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application STUDENT-SERVICE with eureka with status UP
+2025-10-26 11:31:13.760 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1761460273760, current=UP, previous=STARTING]
+2025-10-26 11:31:13.763 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082: registering service...
+2025-10-26 11:31:13.793 [,] [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8082 (http) with context path ''
+2025-10-26 11:31:13.794 [,] [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
+2025-10-26 11:31:13.833 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082 - registration status: 204
+2025-10-26 11:31:15.230 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-10-26 11:31:15.259 [,] [main] INFO  c.u.StudentServiceApplication - Started StudentServiceApplication in 28.015 seconds (JVM running for 29.766)
+2025-10-26 11:36:13.253 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 11:41:13.263 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 11:46:13.272 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 11:51:13.286 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 11:56:13.299 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:01:13.302 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:06:13.315 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:11:13.331 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:16:13.346 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:21:13.350 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:26:13.352 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:31:13.356 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:36:13.368 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:41:13.371 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:46:13.380 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:51:13.385 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:56:13.391 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 12:58:33.078 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-26 12:58:33.078 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-26 12:58:33.081 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-10-26 12:58:33.107 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 12:58:33.107 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 2b09bd14188d5ed1
+2025-10-26 12:58:33.109 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/exists/21
+2025-10-26 12:58:33.109 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 12:58:33.109 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=be45326cd7c21e7b, x-b3-traceid=2b09bd14188d5ed1, x-b3-spanid=b1afcbc5d84b7fdc, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 12:58:33.109 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 12:58:33.109 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465513107
+2025-10-26 12:58:33.327 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 12:58:33.327 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 2b09bd14188d5ed1
+2025-10-26 12:58:33.327 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 12:58:33.327 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger -  Duration: 220ms
+2025-10-26 12:58:33.330 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Response Body: true
+2025-10-26 12:58:33.331 [2b09bd14188d5ed1,b1afcbc5d84b7fdc] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 12:58:36.646 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 12:58:36.646 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - TraceID: ac6ffb2e07fa06a2
+2025-10-26 12:58:36.646 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/exists/21
+2025-10-26 12:58:36.646 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 12:58:36.647 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=8280cbfecc8b2360, x-b3-traceid=ac6ffb2e07fa06a2, x-b3-spanid=259b0a714e0dc921, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 12:58:36.647 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 12:58:36.647 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465516646
+2025-10-26 12:58:36.680 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 12:58:36.680 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - TraceID: ac6ffb2e07fa06a2
+2025-10-26 12:58:36.681 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 12:58:36.681 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger -  Duration: 34ms
+2025-10-26 12:58:36.681 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - Response Body: true
+2025-10-26 12:58:36.681 [ac6ffb2e07fa06a2,259b0a714e0dc921] [http-nio-8082-exec-2] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:00:06.604 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:00:06.604 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: 0d351d9057a9a751
+2025-10-26 13:00:06.604 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/exists/21
+2025-10-26 13:00:06.605 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:00:06.605 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=d3a4020427cf8a9c, x-b3-traceid=0d351d9057a9a751, x-b3-spanid=213b5a152cb6f037, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:00:06.605 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:00:06.605 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465606604
+2025-10-26 13:00:06.609 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:00:06.609 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: 0d351d9057a9a751
+2025-10-26 13:00:06.609 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:00:06.610 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger -  Duration: 5ms
+2025-10-26 13:00:06.610 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Response Body: true
+2025-10-26 13:00:06.610 [0d351d9057a9a751,213b5a152cb6f037] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:01:13.398 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: 957851b13c15e60e
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/exists/21
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=112fa3c24e49ed91, x-b3-traceid=957851b13c15e60e, x-b3-spanid=50e7a3318a3f55c5, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:01:25.097 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465685097
+2025-10-26 13:01:25.100 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:01:25.101 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: 957851b13c15e60e
+2025-10-26 13:01:25.101 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:01:25.101 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger -  Duration: 3ms
+2025-10-26 13:01:25.101 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - Response Body: true
+2025-10-26 13:01:25.101 [957851b13c15e60e,50e7a3318a3f55c5] [http-nio-8082-exec-6] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:01:38.898 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:01:38.898 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: 9c2bc25ac61f455d
+2025-10-26 13:01:38.898 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/exists/21
+2025-10-26 13:01:38.898 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:01:38.898 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=0693c96a5b3c404f, x-b3-traceid=9c2bc25ac61f455d, x-b3-spanid=15cc6048dfbc1ce5, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:01:38.898 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:01:38.899 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465698898
+2025-10-26 13:01:38.902 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:01:38.902 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: 9c2bc25ac61f455d
+2025-10-26 13:01:38.902 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:01:38.902 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger -  Duration: 4ms
+2025-10-26 13:01:38.902 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - Response Body: true
+2025-10-26 13:01:38.902 [9c2bc25ac61f455d,15cc6048dfbc1ce5] [http-nio-8082-exec-7] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:01:47.112 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:01:47.113 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - TraceID: a42568b872b4a4da
+2025-10-26 13:01:47.113 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/exists/3
+2025-10-26 13:01:47.113 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:01:47.113 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=dfebbc726468819b, x-b3-traceid=a42568b872b4a4da, x-b3-spanid=563924cee6d88f39, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:01:47.113 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:01:47.113 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465707112
+2025-10-26 13:01:47.116 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:01:47.116 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - TraceID: a42568b872b4a4da
+2025-10-26 13:01:47.116 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:01:47.116 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger -  Duration: 4ms
+2025-10-26 13:01:47.117 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - Response Body: true
+2025-10-26 13:01:47.117 [a42568b872b4a4da,563924cee6d88f39] [http-nio-8082-exec-8] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:06:13.416 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - TraceID: 30525945f954e844
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/3
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=2f8645cb808c04f9, x-b3-traceid=30525945f954e844, x-b3-spanid=e4ba9a34fb4a21c6, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:06:15.092 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465975092
+2025-10-26 13:06:15.133 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:06:15.133 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - TraceID: 30525945f954e844
+2025-10-26 13:06:15.133 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:06:15.133 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger -  Duration: 41ms
+2025-10-26 13:06:15.135 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - Response Body: {
+  "id" : 3,
+  "userId" : 36,
+  "name" : "umair123",
+  "email" : "umair.doe@university.com",
+  "rollNumber" : "123",
+  "semester" : "5th",
+  "department" : "Computer Science",
+  "active" : true
+}
+2025-10-26 13:06:15.135 [30525945f954e844,e4ba9a34fb4a21c6] [http-nio-8082-exec-10] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:06:15.139 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:06:15.139 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 30525945f954e844
+2025-10-26 13:06:15.139 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/21
+2025-10-26 13:06:15.139 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:06:15.140 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=2f8645cb808c04f9, x-b3-traceid=30525945f954e844, x-b3-spanid=6b437ddc0fb86523, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:06:15.140 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:06:15.140 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761465975139
+2025-10-26 13:06:15.144 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:06:15.144 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 30525945f954e844
+2025-10-26 13:06:15.145 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:06:15.145 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger -  Duration: 5ms
+2025-10-26 13:06:15.145 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - Response Body: {
+  "id" : 21,
+  "userId" : 41,
+  "name" : "umer123",
+  "email" : "abc@university.com",
+  "rollNumber" : "1",
+  "semester" : "5th",
+  "department" : "Computer Science",
+  "active" : true
+}
+2025-10-26 13:06:15.145 [30525945f954e844,6b437ddc0fb86523] [http-nio-8082-exec-1] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - TraceID: 644f98a004a628be
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/3
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=52ac9ed7b1efc53b, x-b3-traceid=644f98a004a628be, x-b3-spanid=1690d409cbc91a45, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:08:40.176 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761466120176
+2025-10-26 13:08:40.180 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:08:40.180 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - TraceID: 644f98a004a628be
+2025-10-26 13:08:40.180 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:08:40.180 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger -  Duration: 4ms
+2025-10-26 13:08:40.181 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - Response Body: {
+  "id" : 3,
+  "userId" : 36,
+  "name" : "umair123",
+  "email" : "umair.doe@university.com",
+  "rollNumber" : "123",
+  "semester" : "5th",
+  "department" : "Computer Science",
+  "active" : true
+}
+2025-10-26 13:08:40.181 [644f98a004a628be,1690d409cbc91a45] [http-nio-8082-exec-3] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:08:40.184 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:08:40.184 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: 644f98a004a628be
+2025-10-26 13:08:40.184 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/21
+2025-10-26 13:08:40.184 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:08:40.184 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=52ac9ed7b1efc53b, x-b3-traceid=644f98a004a628be, x-b3-spanid=52f77cc5e8b56786, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:08:40.185 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:08:40.185 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761466120184
+2025-10-26 13:08:40.188 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:08:40.188 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: 644f98a004a628be
+2025-10-26 13:08:40.188 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Status: 200
+2025-10-26 13:08:40.188 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger -  Duration: 4ms
+2025-10-26 13:08:40.188 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - Response Body: {
+  "id" : 21,
+  "userId" : 41,
+  "name" : "umer123",
+  "email" : "abc@university.com",
+  "rollNumber" : "1",
+  "semester" : "5th",
+  "department" : "Computer Science",
+  "active" : true
+}
+2025-10-26 13:08:40.188 [644f98a004a628be,52f77cc5e8b56786] [http-nio-8082-exec-4] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:09:13.177 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:09:13.177 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: cb722aa8680bd3d0
+2025-10-26 13:09:13.178 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/api/students/301/exists
+2025-10-26 13:09:13.178 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:09:13.180 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=897fbb101389c746, x-b3-traceid=cb722aa8680bd3d0, x-b3-spanid=c3cceab4ceecf648, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:09:13.180 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:09:13.181 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761466153177
+2025-10-26 13:09:13.182 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:09:13.182 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: cb722aa8680bd3d0
+2025-10-26 13:09:13.182 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Status: 404
+2025-10-26 13:09:13.183 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger -  Duration: 5ms
+2025-10-26 13:09:13.183 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Response Body: [Empty Body]
+2025-10-26 13:09:13.183 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:09:13.185 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE REQUEST ===
+2025-10-26 13:09:13.185 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: cb722aa8680bd3d0
+2025-10-26 13:09:13.186 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8082/error
+2025-10-26 13:09:13.186 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Query: null
+2025-10-26 13:09:13.186 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=897fbb101389c746, x-b3-traceid=cb722aa8680bd3d0, x-b3-spanid=c3cceab4ceecf648, x-b3-sampled=0, host=localhost:8082, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
+2025-10-26 13:09:13.186 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
+2025-10-26 13:09:13.186 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761466153185
+2025-10-26 13:09:13.193 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - === UNKNOWN_SERVICE RESPONSE ===
+2025-10-26 13:09:13.193 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: cb722aa8680bd3d0
+2025-10-26 13:09:13.193 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Status: 404
+2025-10-26 13:09:13.193 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger -  Duration: 8ms
+2025-10-26 13:09:13.193 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - Response Body: [Empty Body]
+2025-10-26 13:09:13.193 [cb722aa8680bd3d0,c3cceab4ceecf648] [http-nio-8082-exec-5] INFO  c.u.logging.RequestResponseLogger - === END UNKNOWN_SERVICE ===
+2025-10-26 13:11:13.418 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:16:13.419 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:21:13.421 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:26:13.430 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:31:13.440 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:36:13.454 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:41:13.458 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-10-26 13:41:15.199 [,] [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application STUDENT-SERVICE with eureka with status DOWN
+2025-10-26 13:41:15.199 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1761468075199, current=DOWN, previous=UP]
+2025-10-26 13:41:15.200 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082: registering service...
+2025-10-26 13:41:15.214 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082 - registration status: 204
+2025-10-26 13:41:15.291 [,] [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-26 13:41:15.294 [,] [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-26 13:41:15.375 [,] [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-26 13:41:15.380 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-10-26 13:41:17.782 [,] [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 32 more
+
+2025-10-26 13:41:17.791 [,] [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-10-26 13:41:17.811 [,] [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1135)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1016)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 22 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 35 more
+
+2025-10-26 13:41:17.812 [,] [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-10-26 13:41:17.839 [,] [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 20 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 33 more
+
+2025-10-26 13:41:17.839 [,] [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-10-26 13:41:17.841 [,] [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1135)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1016)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 23 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 36 more
+
+2025-10-26 13:41:17.842 [,] [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-10-26 13:41:17.844 [,] [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1135)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1016)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2025-10-26 13:41:17.852 [,] [DiscoveryClient-HeartbeatExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2025-10-26 13:41:18.387 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-10-26 13:41:18.400 [,] [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 40 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 53 more
+
+2025-10-26 13:41:18.400 [,] [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/STUDENT-SERVICE/localhost:student-service:8082": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-10-26 13:41:18.401 [,] [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_STUDENT-SERVICE/localhost:student-service:8082 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2025-10-26 13:41:18.413 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

@@ -1,0 +1,23 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: service-discovery
+  # Kyunki ye khud config server hai
+  cloud:
+    config:
+      server:
+          clone-on-start: true
+          default-label: main
+# Eureka Server Configuration
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+# Config Server Configuration

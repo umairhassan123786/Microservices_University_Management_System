@@ -1,0 +1,53 @@
+#server:
+#  port: 8080
+#
+#spring:
+#  application:
+#    name: api-gateway
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: auth-service
+#          uri: lb://auth-service
+#          predicates:
+#            - Path=/api/auth/**
+#          filters:
+#            - StripPrefix=1
+#
+#        - id: student-service
+#          uri: lb://student-service
+#          predicates:
+#            - Path=/api/students/**
+#          filters:
+#            - StripPrefix=1
+#
+#        - id: course-service
+#          uri: lb://course-service
+#          predicates:
+#            - Path=/api/courses/**
+#          filters:
+#            - StripPrefix=1
+#
+#        - id: teacher-service
+#          uri: lb://teacher-service
+#          predicates:
+#            - Path=/api/teachers/**
+#          filters:
+#            - StripPrefix=1
+#
+#        - id: attendance-service
+#          uri: lb://attendance-service
+#          predicates:
+#            - Path=/api/attendance/**
+#          filters:
+#            - StripPrefix=1
+#
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/

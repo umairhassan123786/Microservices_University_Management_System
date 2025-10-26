@@ -1,0 +1,21 @@
+#server:
+#  port: 8085
+#
+#spring:
+#  application:
+#    name: attendance-service
+#  datasource:
+#    url: jdbc:oracle:thin:@localhost:1521/attendance_pdb
+#    username: system
+#    password: oracle123
+#    driver-class-name: oracle.jdbc.OracleDriver
+#  jpa:
+#    database-platform: org.hibernate.dialect.Oracle12cDialect
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
