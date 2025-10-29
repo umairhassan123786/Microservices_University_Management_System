@@ -1,7 +1,5 @@
 package com.university.Entities;
-
 import com.university.Enum.AttendanceStatus;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -39,10 +37,8 @@ public class Attendance {
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
-    // ✅ Default Constructor
     public Attendance() {}
 
-    // ✅ Parameterized Constructor
     public Attendance(Long studentId, Long courseId, LocalDate date, AttendanceStatus status, String semester) {
         this.studentId = studentId;
         this.courseId = courseId;
@@ -53,7 +49,6 @@ public class Attendance {
         this.updatedAt = LocalDateTime.now();
     }
 
-    // ✅ GETTERS AND SETTERS
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -81,7 +76,6 @@ public class Attendance {
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 
-    // ✅ PrePersist and PreUpdate methods
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

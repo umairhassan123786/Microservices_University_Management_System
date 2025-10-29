@@ -118,7 +118,7 @@ public class TeacherController {
     @PostMapping
     public Map<String, Object> createTeacher(@RequestBody Map<String, Object> teacherData) {
         try {
-            System.out.println("📥 Received teacher data: " + teacherData);
+            System.out.println("Received teacher data: " + teacherData);
 
             Teacher savedTeacher = teacherService.createTeacher(teacherData);
 
@@ -131,11 +131,11 @@ public class TeacherController {
             response.put("department", savedTeacher.getDepartment());
             response.put("message", "Teacher profile created successfully");
 
-            System.out.println("✅ Teacher created with ID: " + savedTeacher.getId() + ", UserId: " + savedTeacher.getUserId());
+            System.out.println("Teacher created with ID: " + savedTeacher.getId() + ", UserId: " + savedTeacher.getUserId());
             return response;
 
         } catch (Exception e) {
-            System.out.println("❌ Error creating teacher: " + e.getMessage());
+            System.out.println("Error creating teacher: " + e.getMessage());
             Map<String, Object> errorResponse = new HashMap<>();
             errorResponse.put("error", "Failed to create teacher: " + e.getMessage());
             errorResponse.put("userId", teacherData.get("userId"));

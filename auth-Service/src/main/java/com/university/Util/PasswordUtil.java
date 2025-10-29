@@ -1,5 +1,4 @@
 package com.university.Util;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 

@@ -1,16 +1,13 @@
 package com.university.Service;
-
 import com.university.DTO.UpdateAttendanceRequest;
 import com.university.Entities.Attendance;
 import com.university.Enum.AttendanceStatus;
 import com.university.Repository.AttendanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +15,6 @@ public class AttendanceService {
 
     private final AttendanceRepository attendanceRepository;
     public Attendance markAttendance(Attendance attendance) {
-        // Check if attendance already exists
         if (attendanceRepository.existsByStudentIdAndCourseIdAndDate(
                 attendance.getStudentId(), attendance.getCourseId(), attendance.getDate())) {
             throw new RuntimeException("Attendance already marked for this student, course and date");
@@ -26,7 +22,6 @@ public class AttendanceService {
         return attendanceRepository.save(attendance);
     }
 
-    // ✅ BULK MARK ATTENDANCE
     public List<Attendance> bulkMarkAttendance(List<Attendance> attendanceList) {
         // Validate each record before saving
         for (Attendance attendance : attendanceList) {
@@ -38,18 +33,14 @@ public class AttendanceService {
         }
         return attendanceRepository.saveAll(attendanceList);
     }
-
-    // ✅ GET COURSE ATTENDANCE
     public List<Attendance> getCourseAttendance(Long courseId) {
         return attendanceRepository.findByCourseId(courseId);
     }
 
-    // ✅ GET ATTENDANCE BY DATE AND COURSE
     public List<Attendance> getAttendanceByDateAndCourse(Long courseId, LocalDate date) {
         return attendanceRepository.findByCourseIdAndDate(courseId, date);
     }
 
-    // ✅ EXISTING METHODS
     public List<Attendance> getStudentAttendance(Long studentId) {
         return attendanceRepository.findByStudentId(studentId);
     }
@@ -116,10 +107,7 @@ public class AttendanceService {
 
         return (presentCount * 100.0) / allRecords.size();
     }
-
-    // ✅ TEACHER COURSE ATTENDANCE
     public List<Attendance> getTeacherCourseAttendance(Long teacherId, Long courseId) {
-        // Note: Teacher validation should be done in TeacherService
         return attendanceRepository.findByCourseId(courseId);
     }
 }

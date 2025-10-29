@@ -9,7 +9,7 @@ public class AttendanceDTO {
     private Long studentId;
     private Long courseId;
     private LocalDate date;
-    private String status; // PRESENT, ABSENT, LATE
+    private String status;
     private String studentName;
     private String courseName;
 }

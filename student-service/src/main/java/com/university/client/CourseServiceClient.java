@@ -1,6 +1,5 @@
 package com.university.client;
-
-import com.university.DTO.CourseDTO;
+import com.university.DTO.CourseServiceResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,11 +13,11 @@ import java.util.List;
 public interface CourseServiceClient {
 
     @GetMapping("/student/{studentId}")
-    List<CourseDTO> getCoursesByStudentId(@PathVariable("studentId") Long studentId);
+    List<CourseServiceResponseDTO> getCoursesByStudentId(@PathVariable("studentId") Long studentId);
 
     @GetMapping("/{courseId}")
-    CourseDTO getCourseById(@PathVariable("courseId") Long courseId);
+    CourseServiceResponseDTO getCourseById(@PathVariable("courseId") Long courseId);
 
     @GetMapping("/teacher/{teacherId}")
-    List<CourseDTO> getCoursesByTeacherId(@PathVariable("teacherId") Long teacherId);
+    List<CourseServiceResponseDTO> getCoursesByTeacherId(@PathVariable("teacherId") Long teacherId);
 }

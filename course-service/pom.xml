@@ -35,14 +35,6 @@
             <groupId>com.university</groupId>
             <artifactId>interceptor-common</artifactId>
         </dependency>
-
-<!--        &lt;!&ndash; Optional: Zipkin for visualization - NO VERSION NEEDED &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
-<!--        </dependency>-->
-
-        <!-- For better logging -->
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
@@ -65,10 +57,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId> <!-- Optional -->

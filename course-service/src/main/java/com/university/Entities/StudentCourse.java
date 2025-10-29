@@ -1,5 +1,4 @@
 package com.university.Entities;
-
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +18,6 @@ public class StudentCourse {
     private String semester;
     private String grade;
 
-    // ✅ Constructors
     public StudentCourse() {}
 
     public StudentCourse(Long studentId, Long courseId, String semester) {
@@ -28,7 +26,6 @@ public class StudentCourse {
         this.semester = semester;
     }
 
-    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

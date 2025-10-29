@@ -1,12 +1,10 @@
 package com.university.DTO;
-
 import lombok.Data;
 import javax.validation.constraints.*;
 
 @Data
 public class RegisterRequest {
 
-    // ✅ Common fields for all roles
     @NotBlank(message = "Username is required")
     private String username;
 
@@ -22,15 +20,12 @@ public class RegisterRequest {
     @Pattern(regexp = "ADMIN|TEACHER|STUDENT", message = "Role must be ADMIN, TEACHER or STUDENT")
     private String role;
 
-    // ✅ Common profile field
     private String fullName;
 
-    // ✅ TEACHER specific fields
     private String teacherId;
     private String department;
     private String qualification;
 
-    // ✅ STUDENT specific fields
     private String rollNumber;
     private String semester;
 }

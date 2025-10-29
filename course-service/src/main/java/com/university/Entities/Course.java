@@ -1,8 +1,10 @@
 package com.university.Entities;
-
+import lombok.Getter;
+import lombok.Setter;
 import javax.persistence.*;
-
 @Entity
+@Getter
+@Setter
 @Table(name = "courses")
 public class Course {
     @Id
@@ -15,12 +17,11 @@ public class Course {
     private String department;
     private String semester;
     private Integer credits;
-
-    // ✅ Teacher ID (nullable foreign key)
+    @Column(name = "course_code", nullable = true, unique = true)
+    private String courseCode;
     @Column(name = "teacher_id", nullable = true)
     private Long teacherId;
 
-    // ✅ Constructors
     public Course() {}
 
     public Course(String courseName, String department, String semester, Integer credits) {
@@ -28,10 +29,8 @@ public class Course {
         this.department = department;
         this.semester = semester;
         this.credits = credits;
-        this.teacherId = null; // ✅ Initially null
+        this.teacherId = null;
     }
-
-    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

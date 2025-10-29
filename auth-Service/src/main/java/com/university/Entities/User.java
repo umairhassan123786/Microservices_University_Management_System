@@ -1,5 +1,4 @@
 package com.university.Entities;
-
 import lombok.Data;
 import javax.persistence.*;
 
@@ -22,13 +21,11 @@ public class User {
     private String email;
 
     @Column(name = "ROLE", nullable = false)
-    private String role; // STUDENT, TEACHER, ADMIN
+    private String role;
 
-    // ✅ FIXED: Oracle compatible - NUMBER(1) for boolean
     @Column(name = "ACTIVE", columnDefinition = "NUMBER(1) DEFAULT 1")
-    private Integer active = 1; // 1 = true, 0 = false
+    private Integer active = 1;
 
-    // ✅ Helper methods for boolean operations
     public Boolean isActive() {
         return active == 1;
     }

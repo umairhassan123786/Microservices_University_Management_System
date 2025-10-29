@@ -1,5 +1,5 @@
 package com.university.Service;
-
+import com.university.DTO.CourseDTO;
 import com.university.DTO.MarkAttendanceRequest;
 import com.university.Entities.Attendance;
 import com.university.Entities.Teacher;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class TeacherService {
@@ -28,8 +29,6 @@ public class TeacherService {
 
     @Autowired
     private AttendanceServiceClient attendanceServiceClient;
-
-    // ✅ BASIC CRUD METHODS
     public List<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
@@ -88,16 +87,48 @@ public class TeacherService {
 
     public List<Map<String, Object>> getTeacherCourses(Long teacherId) {
         try {
-            return courseServiceClient.getCoursesByTeacherId(teacherId);
+            System.out.println("Fetching courses for teacher: " + teacherId);
+
+            // Get courses as List<CourseDTO> with proper mapping
+            List<CourseDTO> courses = courseServiceClient.getCoursesByTeacherId(teacherId);
+
+            System.out.println("Raw courses response: " + courses);
+
+            if (courses == null || courses.isEmpty()) {
+                System.out.println("No courses found for teacher: " + teacherId);
+                throw new RuntimeException("No courses found for this teacher");
+            }
+
+            // Convert CourseDTO to Map
+            List<Map<String, Object>> courseMaps = courses.stream()
+                    .map(course -> {
+                        System.out.println("Processing course: " + course);
+
+                        Map<String, Object> courseMap = new HashMap<>();
+                        courseMap.put("id", course.getId());
+                        courseMap.put("name", course.getName());      // ✅ Now properly mapped
+                        courseMap.put("code", course.getCode());      // ✅ Now properly mapped
+                        courseMap.put("department", course.getDepartment());
+                        courseMap.put("semester", course.getSemester());
+                        courseMap.put("credits", course.getCredits());
+                        courseMap.put("teacherId", course.getTeacherId());
+
+                        System.out.println("Created course map: " + courseMap);
+                        return courseMap;
+                    })
+                    .collect(Collectors.toList());
+
+            System.out.println("Final course maps: " + courseMaps);
+            return courseMaps;
+
         } catch (Exception e) {
-            System.out.println("⚠️ Course service down - Returning empty courses list");
-            return new ArrayList<>();
+            System.err.println("Error in getTeacherCourses: " + e.getMessage());
+            throw new RuntimeException("Error fetching teacher courses: " + e.getMessage());
         }
     }
 
     public List<Map<String, Object>> getStudentsInCourse(Long teacherId, Long courseId) {
         try {
-            // Verify this course belongs to the teacher
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
             boolean courseBelongsToTeacher = teacherCourses.stream()
                     .anyMatch(course -> courseId.equals(Long.valueOf(course.get("id").toString())));
@@ -114,77 +145,86 @@ public class TeacherService {
 
     public Map<String, Object> markAttendanceByTeacher(Long teacherId, Long courseId, MarkAttendanceRequest request) {
         try {
-            Long studentId = request.getStudentId();
-            LocalDate date = request.getDate();
-            String status = request.getStatus();
+            System.out.println("Marking attendance - Teacher: " + teacherId + ", Course: " + courseId + ", Student: " + request.getStudentId());
 
-            // Verify teacher has access to this course
+            // Step 1: Validate teacher has access to this course
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
+            System.out.println("Teacher courses: " + teacherCourses);
+
             boolean hasAccess = teacherCourses.stream()
                     .anyMatch(course -> {
                         Object courseIdObj = course.get("id");
-                        if (courseIdObj instanceof Integer) {
-                            return courseId.equals(((Integer) courseIdObj).longValue());
-                        } else if (courseIdObj instanceof Long) {
-                            return courseId.equals(courseIdObj);
-                        }
-                        return false;
+                        System.out.println("Comparing course ID: " + courseIdObj + " with: " + courseId);
+                        return courseId != null && courseId.equals(courseIdObj);
                     });
 
             if (!hasAccess) {
-                throw new RuntimeException("Teacher does not have access to this course");
+                throw new RuntimeException("Teacher with ID " + teacherId + " does not have access to course ID " + courseId);
             }
+            System.out.println("Teacher course access validated");
 
-            // Boolean studentExists = studentServiceClient.existsById(studentId);
-            // if (studentExists == null || !studentExists) {
-            //     throw new RuntimeException("Student not found with ID: " + studentId);
-            // }
+            // Step 2: Validate student is enrolled in the course
+            List<Map<String, Object>> enrolledStudents = getStudentsInCourse(teacherId, courseId);
+            System.out.println("Enrolled students: " + enrolledStudents);
+
+            boolean isEnrolled = enrolledStudents.stream()
+                    .anyMatch(student -> {
+                        if (student == null) {
+                            System.out.println("Found null student in enrolled list");
+                            return false;
+                        }
+                        Object studentIdObj = student.get("id");
+                        System.out.println("Comparing student ID: " + studentIdObj + " with: " + request.getStudentId());
+                        return studentIdObj != null && request.getStudentId().equals(Long.valueOf(studentIdObj.toString()));
+                    });
+
+            if (!isEnrolled) {
+                throw new RuntimeException("Student with ID " + request.getStudentId() + " is not enrolled in course ID " + courseId);
+            }
+            System.out.println("Student enrollment validated");
+
+            // Step 3: Create and save attendance
             Attendance attendance = new Attendance();
-            attendance.setStudentId(studentId);
+            attendance.setStudentId(request.getStudentId());
             attendance.setCourseId(courseId);
-            attendance.setDate(date);
+            attendance.setStatus(AttendanceStatus.valueOf(request.getStatus()));
+            attendance.setDate(request.getDate());
+            attendance.setRemarks(request.getRemarks()); // ✅ Add remarks
+            attendance.setCreatedAt(LocalDate.now().atStartOfDay());
+            attendance.setUpdatedAt(LocalDate.now().atStartOfDay());
 
-            // Convert status string to enum
-            try {
-                AttendanceStatus attendanceStatus = AttendanceStatus.valueOf(status.toUpperCase());
-                attendance.setStatus(attendanceStatus);
-            } catch (IllegalArgumentException e) {
-                throw new RuntimeException("Invalid attendance status: " + status);
-            }
+            System.out.println("Sending attendance to service: " + attendance);
 
-            attendance.setRemarks("Marked by teacher ID: " + teacherId);
-            attendance.setSemester("Spring 2024");
-
-            // Call attendance service
+            // Step 4: Call attendance service
             Attendance savedAttendance = attendanceServiceClient.markAttendance(attendance);
 
-            Map<String, Object> response = new HashMap<>();
-            response.put("success", true);
-            response.put("id", savedAttendance.getId());
-            response.put("studentId", savedAttendance.getStudentId());
-            response.put("courseId", savedAttendance.getCourseId());
-            response.put("date", savedAttendance.getDate().toString());
-            response.put("status", savedAttendance.getStatus());
-            response.put("message", "Attendance marked successfully");
+            System.out.println("Attendance saved: " + savedAttendance);
 
-            return response;
+            // Step 5: Return success response
+            Map<String, Object> result = new HashMap<>();
+            result.put("message", "Attendance marked successfully");
+            result.put("attendanceId", savedAttendance.getId());
+            result.put("studentId", savedAttendance.getStudentId());
+            result.put("courseId", savedAttendance.getCourseId());
+            result.put("status", savedAttendance.getStatus().toString());
+            result.put("date", savedAttendance.getDate());
+            result.put("remarks", savedAttendance.getRemarks());
+            result.put("teacherId", teacherId);
+
+            System.out.println("Returning result: " + result);
+            return result;
 
         } catch (Exception e) {
-            Map<String, Object> errorResponse = new HashMap<>();
-            errorResponse.put("success", false);
-            errorResponse.put("error", "Failed to mark attendance: " + e.getMessage());
-            return errorResponse;
+            System.err.println("Error in markAttendanceByTeacher: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Failed to mark attendance: " + e.getMessage());
         }
-    }
-    public Map<String, Object> bulkMarkAttendance(Long teacherId, Map<String, Object> request) {
+    }    public Map<String, Object> bulkMarkAttendance(Long teacherId, Map<String, Object> request) {
         try {
             Long courseId = Long.valueOf(request.get("courseId").toString());
             String dateStr = request.get("date").toString();
             LocalDate date = LocalDate.parse(dateStr);
-
-            @SuppressWarnings("unchecked")
             List<Map<String, Object>> students = (List<Map<String, Object>>) request.get("students");
-
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
             boolean hasAccess = teacherCourses.stream()
                     .anyMatch(course -> {
@@ -223,7 +263,6 @@ public class TeacherService {
                 attendanceList.add(attendance);
             }
 
-            // Call bulk attendance service
             List<Attendance> savedAttendances = attendanceServiceClient.bulkMarkAttendance(attendanceList);
 
             Map<String, Object> response = new HashMap<>();
@@ -242,7 +281,6 @@ public class TeacherService {
         }
     }    public Map<String, Object> getTeacherCourseAttendance(Long teacherId, Long courseId) {
         try {
-            // Verify teacher access
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
             boolean hasAccess = teacherCourses.stream()
                     .anyMatch(course -> {
@@ -259,7 +297,6 @@ public class TeacherService {
                 throw new RuntimeException("Teacher does not have access to this course");
             }
 
-            // Get attendance from attendance service
             List<Attendance> attendance = attendanceServiceClient.getCourseAttendance(courseId);
 
             Map<String, Object> response = new HashMap<>();
@@ -276,7 +313,6 @@ public class TeacherService {
             return errorResponse;
         }
     }
-    // TeacherService mein yeh method add karen
     public Boolean existsById(Long teacherId) {
         try {
             return teacherRepository.existsById(teacherId);
@@ -287,7 +323,7 @@ public class TeacherService {
     }
     public List<Attendance> getCourseAttendanceByDate(Long teacherId, Long courseId, LocalDate date) {
         try {
-            // Verify teacher access
+
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
             boolean hasAccess = teacherCourses.stream()
                     .anyMatch(course -> {
@@ -304,7 +340,6 @@ public class TeacherService {
                 throw new RuntimeException("Teacher does not have access to this course");
             }
 
-            // Get attendance by date
             return attendanceServiceClient.getAttendanceByDateAndCourse(courseId, date.toString());
         } catch (Exception e) {
             throw new RuntimeException("Unable to fetch attendance by date: " + e.getMessage());

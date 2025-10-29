@@ -1,36 +1,49 @@
 package com.university.client;
-
-import com.university.DTO.CourseDTO;
+import com.university.DTO.CourseServiceResponseDTO;
 import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 
 @Component
 public class CourseServiceFallback implements CourseServiceClient {
-
     @Override
-    public List<CourseDTO> getCoursesByStudentId(Long studentId) {
-        CourseDTO fallbackCourse1 = new CourseDTO();
-        fallbackCourse1.setId(1L);
-        fallbackCourse1.setName("Course Information Temporarily Unavailable");
-        fallbackCourse1.setCode("N/A");
-        fallbackCourse1.setDescription("Course service is currently unavailable. Please try again later.");
-        return Arrays.asList(fallbackCourse1);
-    }
-
-    @Override
-    public CourseDTO getCourseById(Long courseId) {
-        CourseDTO fallbackCourse = new CourseDTO();
-        fallbackCourse.setId(courseId);
-        fallbackCourse.setName("Course Information Unavailable");
-        fallbackCourse.setCode("N/A");
-        fallbackCourse.setDescription("Course service is temporarily unavailable");
+    public List<CourseServiceResponseDTO> getCoursesByStudentId(Long studentId) {
+        CourseServiceResponseDTO fallbackCourse = new CourseServiceResponseDTO();
+        fallbackCourse.setId(0L);
+        fallbackCourse.setCourseName("Course Service Unavailable");
+        fallbackCourse.setCourseCode("SVC-DOWN");
+        fallbackCourse.setDepartment("Technical Support");
+        fallbackCourse.setSemester("N/A");
         fallbackCourse.setCredits(0);
-        return fallbackCourse;
+        fallbackCourse.setTeacherId(0L);
+
+        return Arrays.asList(fallbackCourse);
     }
 
     @Override
-    public List<CourseDTO> getCoursesByTeacherId(Long teacherId) {
-        return Arrays.asList();
+    public CourseServiceResponseDTO getCourseById(Long studentId) {
+        CourseServiceResponseDTO fallbackCourse = new CourseServiceResponseDTO();
+        fallbackCourse.setId(0L);
+        fallbackCourse.setCourseName("Course Service Unavailable");
+        fallbackCourse.setCourseCode("SVC-DOWN");
+        fallbackCourse.setDepartment("Technical Support");
+        fallbackCourse.setSemester("N/A");
+        fallbackCourse.setCredits(0);
+        fallbackCourse.setTeacherId(0L);
+
+        return (CourseServiceResponseDTO) Arrays.asList(fallbackCourse);
+    }
+    @Override
+    public List<CourseServiceResponseDTO> getCoursesByTeacherId(Long studentId) {
+        CourseServiceResponseDTO fallbackCourse = new CourseServiceResponseDTO();
+        fallbackCourse.setId(0L);
+        fallbackCourse.setCourseName("Course Service Unavailable");
+        fallbackCourse.setCourseCode("SVC-DOWN");
+        fallbackCourse.setDepartment("Technical Support");
+        fallbackCourse.setSemester("N/A");
+        fallbackCourse.setCredits(0);
+        fallbackCourse.setTeacherId(0L);
+
+        return Arrays.asList(fallbackCourse);
     }
 }

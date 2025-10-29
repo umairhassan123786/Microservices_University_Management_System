@@ -9,13 +9,11 @@ import java.util.List;
 
 public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 
-    // Existing methods
     List<Attendance> findByStudentId(Long studentId);
     List<Attendance> findByCourseId(Long courseId);
     List<Attendance> findByCourseIdAndDate(Long courseId, LocalDate date);
     List<Attendance> findByStudentIdAndSemester(Long studentId, String semester);
 
-    // New methods
     List<Attendance> findByStudentIdAndCourseId(Long studentId, Long courseId);
 
     List<Attendance> findByStudentIdAndDateBetween(Long studentId, LocalDate startDate, LocalDate endDate);

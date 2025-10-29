@@ -4,7 +4,6 @@ import com.university.DTO.CourseDTO;
 import com.university.DTO.StudentDTO;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,10 +12,8 @@ import java.util.Map;
 public class CourseServiceFallback implements CourseServiceClient {
 
     @Override
-    public List<Map<String, Object>> getCoursesByTeacherId(Long teacherId) {
-        System.out.println("⚠️ Course service down - Returning empty courses list for teacher: " + teacherId);
-
-        // Return empty list with error info
+    public List<CourseDTO> getCoursesByTeacherId(Long teacherId) {
+        System.out.println("Course service down - Returning empty courses list for teacher: " + teacherId);
         Map<String, Object> errorCourse = new HashMap<>();
         errorCourse.put("id", -1L);
         errorCourse.put("courseName", "Course Service Unavailable");
@@ -24,18 +21,18 @@ public class CourseServiceFallback implements CourseServiceClient {
         errorCourse.put("error", true);
         errorCourse.put("message", "Course service is currently unavailable");
 
-        return List.of(errorCourse);
+        return List.of((CourseDTO) errorCourse);
     }
 
     @Override
     public List<StudentDTO> getCourseStudents(Long courseId) {
-        System.out.println("⚠️ Course service down - Returning empty students list for course: " + courseId);
+        System.out.println("Course service down - Returning empty students list for course: " + courseId);
         return List.of();
     }
 
     @Override
     public List<Map<String, Object>> getCourseStudentDetails(Long courseId) {
-        System.out.println("⚠️ Course service down - Returning empty student details for course: " + courseId);
+        System.out.println("Course service down - Returning empty student details for course: " + courseId);
 
         // Return meaningful error response
         Map<String, Object> errorStudent = new HashMap<>();

@@ -1,5 +1,4 @@
 package com.university.Service;
-
 import com.university.Entities.Course;
 import com.university.Entities.StudentCourse;
 import com.university.Repository.CourseRepository;
@@ -9,7 +8,6 @@ import com.university.client.TeacherServiceClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -32,16 +30,17 @@ public class CourseService {
     }
 
     public Course createCourse(Course course) {
+        if (course.getCourseCode() == null || course.getCourseCode().trim().isEmpty()) {
+            throw new RuntimeException("Course code is required");
+        }
+        if (courseRepository.existsByCourseCode(course.getCourseCode())) {
+            throw new RuntimeException("Course code already exists: " + course.getCourseCode());
+        }
         if (course.getTeacherId() != null) {
             validateTeacherExists(course.getTeacherId());
         }
-
-        if (course.getTeacherId() != null && course.getTeacherId() == 0) {
-            course.setTeacherId(null);
-        }
         return courseRepository.save(course);
     }
-
     public Course updateCourse(Long id, Course courseDetails) {
         Course course = getCourseById(id);
         course.setCourseName(courseDetails.getCourseName());
@@ -70,7 +69,6 @@ public class CourseService {
     }
 
     public StudentCourse enrollStudent(StudentCourse enrollment) {
-        // ✅ Validate student exists before enrollment
         validateStudentExists(enrollment.getStudentId());
         validateCourseExists(enrollment.getCourseId());
 
@@ -207,7 +205,6 @@ public class CourseService {
                 })
                 .collect(Collectors.toList());
     }
-    // ✅ CourseService mein ye methods add karein
     @Transactional
     public boolean unenrollStudentWithConfirmation(Long courseId, Long studentId) {
         try {
@@ -218,7 +215,6 @@ public class CourseService {
                 return false;
             }
 
-            // ✅ Delete the enrollment
             studentCourseRepository.deleteByStudentIdAndCourseId(studentId, courseId);
               return true;
 
@@ -244,22 +240,17 @@ public class CourseService {
     @Transactional
     public int unenrollMultipleStudents(Long courseId, List<Long> studentIds) {
         try {
-
             int totalUnenrolled = 0;
             for (Long studentId : studentIds) {
                 try {
                     studentCourseRepository.deleteByStudentIdAndCourseId(studentId, courseId);
                     totalUnenrolled++;
                 } catch (Exception e) {
-                   // log.warn("Failed to unenroll student {} from course {}: {}", studentId, courseId, e.getMessage());
                 }
             }
-
-        //    log.info("Successfully unenrolled {} students from course {}", totalUnenrolled, courseId);
             return totalUnenrolled;
 
         } catch (Exception e) {
-         //   log.error("Error in bulk unenrollment for course {}: {}", courseId, e.getMessage());
             throw new RuntimeException("Bulk unenrollment failed: " + e.getMessage());
         }
     }

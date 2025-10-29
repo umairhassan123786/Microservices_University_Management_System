@@ -1,44 +1,33 @@
-#server:
-#  port: 8084
-#
-#spring:
-#  application:
-#    name: teacher-service
-#  datasource:
-#    url: jdbc:oracle:thin:@localhost:1521/teacher_pdb
-#    username: system
-#    password: oracle123
-#    driver-class-name: oracle.jdbc.OracleDriver
-#  jpa:
-#    database-platform: org.hibernate.dialect.Oracle12cDialect
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#
-## Resilience4j Configuration
-#resilience4j:
-#  circuitbreaker:
-#    instances:
-#      studentService:
-#        failure-rate-threshold: 50
-#        wait-duration-in-open-state: 10s
-#        sliding-window-size: 10
-#      courseService:
-#        failure-rate-threshold: 50
-#        wait-duration-in-open-state: 10s
-#        sliding-window-size: 10
-#      attendanceService:
-#        failure-rate-threshold: 50
-#        wait-duration-in-open-state: 10s
-#        sliding-window-size: 10
-#
-## Feign Circuit Breaker
-#feign:
-#  circuitbreaker:
-#    enabled: true
-#
-## Eureka Client
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/teacher_pdb
+    username: system
+    password: oracle123
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+  sleuth:
+    sampler:
+      probability: 1.0
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com.university.logging: INFO
+    org.springframework.web.filter: DEBUG
+    feign: DEBUG
+  file:
+    name: logs/${spring.application.name}.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{traceId:-},%X{spanId:-}] [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{traceId:-},%X{spanId:-}] [%thread] %-5level %logger{36} - %msg%n"

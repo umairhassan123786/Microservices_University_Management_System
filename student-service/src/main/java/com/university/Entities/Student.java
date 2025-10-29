@@ -1,5 +1,4 @@
 package com.university.Entities;
-
 import lombok.*;
 import javax.persistence.*;
 

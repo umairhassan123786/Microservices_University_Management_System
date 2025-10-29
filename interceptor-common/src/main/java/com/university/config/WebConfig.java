@@ -1,5 +1,4 @@
 package com.university.config;
-
 import com.university.logging.RequestResponseLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +14,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(requestResponseLogger)
-                .addPathPatterns("/**"); // All endpoints
+                .addPathPatterns("/**");
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "student-service", url = "http://localhost:8082",
+@FeignClient(name = "student-service", url = "http://localhost:8083",
         fallback = StudentServiceFallback.class)
 public interface StudentServiceClient {
 

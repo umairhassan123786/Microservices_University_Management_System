@@ -10,7 +10,6 @@ spring:
       server:
           clone-on-start: true
           default-label: main
-# Eureka Server Configuration
 eureka:
   client:
     register-with-eureka: false

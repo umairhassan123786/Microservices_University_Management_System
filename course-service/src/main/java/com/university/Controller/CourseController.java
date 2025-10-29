@@ -170,8 +170,6 @@ public class CourseController {
             ));
         }
     }
-
-    // ✅ Single unenroll endpoint (duplicate remove kiya)
     @DeleteMapping("/{courseId}/unenroll-student/{studentId}")
     public ResponseEntity<?> unenrollStudent(
             @PathVariable Long courseId,

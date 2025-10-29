@@ -1,6 +1,5 @@
 package com.university.Controller;
 import com.university.DTO.*;
-import com.university.Entities.User;
 import com.university.Service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

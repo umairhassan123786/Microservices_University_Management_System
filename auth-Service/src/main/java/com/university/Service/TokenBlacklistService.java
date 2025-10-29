@@ -5,7 +5,7 @@ import com.university.Util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
@@ -18,48 +18,44 @@ public class TokenBlacklistService {
     @Autowired
     private JwtUtil jwtUtil;
 
-    // ✅ Token ko blacklist mein add karein
+    @Transactional
     public void invalidateToken(String token) {
         try {
+            if (invalidatedTokenRepository.existsByToken(token)) {
+                return;
+            }
             Date expiryDate = jwtUtil.getExpirationDateFromToken(token);
-
-            InvalidatedToken invalidatedToken = new InvalidatedToken();
-            invalidatedToken.setToken(token);
-            invalidatedToken.setExpiryDate(expiryDate);
-            invalidatedToken.setInvalidatedAt(new Date());
-
+            InvalidatedToken invalidatedToken = new InvalidatedToken(token, expiryDate);
             invalidatedTokenRepository.save(invalidatedToken);
         } catch (Exception e) {
-            // Token invalid hai ya parse nahi ho raha
-            System.out.println("❌ Token invalidate karne mein error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
-    // ✅ Check karein token blacklisted hai ya nahi
     public boolean isTokenBlacklisted(String token) {
-        return invalidatedTokenRepository.existsByToken(token);
+        try {
+            return invalidatedTokenRepository.existsByToken(token);
+        } catch (Exception e) {
+            return false;
+        }
     }
-
-    // ✅ Expired tokens automatically delete karein (har 30 minute mein)
-    @Scheduled(fixedRate = 1800000) // 30 minutes
+    @Scheduled(fixedRate = 1800000)
+    @Transactional
     public void cleanupExpiredTokens() {
         try {
-            List<InvalidatedToken> expiredTokens = invalidatedTokenRepository.findAll();
             Date now = new Date();
-
-            int deletedCount = 0;
-            for (InvalidatedToken token : expiredTokens) {
-                if (token.getExpiryDate().before(now)) {
-                    invalidatedTokenRepository.delete(token);
-                    deletedCount++;
-                }
+            List<InvalidatedToken> expiredTokens = invalidatedTokenRepository.findByExpiryDateBefore(now);
+            int deletedCount = expiredTokens.size();
+            if (!expiredTokens.isEmpty()) {
+                invalidatedTokenRepository.deleteAll(expiredTokens);
+            } else {
             }
 
-            if (deletedCount > 0) {
-                System.out.println("✅ " + deletedCount + " expired tokens deleted from blacklist");
-            }
         } catch (Exception e) {
-            System.out.println("❌ Token cleanup error: " + e.getMessage());
+            e.printStackTrace();
         }
+    }
+    public long getBlacklistedTokenCount() {
+        return invalidatedTokenRepository.count();
     }
 }

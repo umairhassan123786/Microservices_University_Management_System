@@ -1,5 +1,4 @@
 package com.university.Controller;
-
 import com.university.DTO.AttendanceDTO;
 import com.university.DTO.CourseDTO;
 import com.university.DTO.StudentProfileDTO;
@@ -9,7 +8,6 @@ import com.university.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -31,8 +29,6 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    // ✅ Get Student's Overall Attendance
     @GetMapping("/{studentId}/attendance")
     public ResponseEntity<List<AttendanceDTO>> getStudentAttendance(@PathVariable Long studentId) {
         try {
@@ -42,8 +38,6 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    // ✅ Get Student's Course-wise Attendance
     @GetMapping("/{studentId}/attendance/course/{courseId}")
     public ResponseEntity<List<AttendanceDTO>> getCourseAttendance(
             @PathVariable Long studentId,
@@ -56,7 +50,6 @@ public class StudentController {
         }
     }
 
-    // ✅ Get Complete Student Profile
     @GetMapping("/{studentId}/profile")
     public ResponseEntity<StudentProfileDTO> getStudentProfile(@PathVariable Long studentId) {
         try {
@@ -66,8 +59,6 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    // ✅ Basic CRUD endpoints
     @GetMapping
     public ResponseEntity<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
@@ -91,9 +82,7 @@ public class StudentController {
     @PostMapping(consumes = "application/json")
     public ResponseEntity<?> createStudent(@RequestBody Map<String, Object> studentData) {
         try {
-            System.out.println("📥 Received student data: " + studentData);
-
-            // Validate required fields
+            System.out.println("Received student data: " + studentData);
             if (!studentData.containsKey("userId") || !studentData.containsKey("rollNumber")) {
                 return ResponseEntity.badRequest().body(Map.of(
                         "error", "userId and rollNumber are required fields"
@@ -103,7 +92,7 @@ public class StudentController {
             Object student = studentService.createStudent(studentData);
             return ResponseEntity.ok(student);
         } catch (RuntimeException e) {
-            System.out.println("❌ Error creating student: " + e.getMessage());
+            System.out.println("Error creating student: " + e.getMessage());
             return ResponseEntity.badRequest().body(Map.of(
                     "error", e.getMessage(),
                     "status", "FAILED"
@@ -116,7 +105,6 @@ public class StudentController {
         boolean exists = studentService.existsByRollNumber(rollNumber);
         return ResponseEntity.ok(exists);
     }
-    // Student Controller mein add karein
     @GetMapping("/exists/{studentId}")
     public Boolean existsById(@PathVariable Long studentId) {
         try {

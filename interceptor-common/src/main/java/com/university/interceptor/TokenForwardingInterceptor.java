@@ -1,5 +1,4 @@
 package com.university.interceptor;
-
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -23,7 +22,7 @@ public class TokenForwardingInterceptor implements ClientHttpRequestInterceptor 
             String authHeader = attributes.getRequest().getHeader("Authorization");
             if (authHeader != null && !authHeader.isEmpty()) {
                 request.getHeaders().set("Authorization", authHeader);
-                System.out.println("✅ Token forwarded to: " + request.getURI());
+                System.out.println("Token forwarded to: " + request.getURI());
             }
         }
 

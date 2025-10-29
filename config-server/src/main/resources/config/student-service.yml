@@ -1,44 +1,47 @@
-#server:
-#  port: 8082
-#
-#spring:
-#  application:
-#    name: student-service
-#  datasource:
-#    url: jdbc:oracle:thin:@localhost:1521/student_pdb
-#    username: system
-#    password: oracle123
-#    driver-class-name: oracle.jdbc.OracleDriver
-#  jpa:
-#    database-platform: org.hibernate.dialect.Oracle12cDialect
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#
-## Resilience4j Configuration
-#resilience4j:
-#  circuitbreaker:
-#    instances:
-#      courseService:
-#        failure-rate-threshold: 50
-#        wait-duration-in-open-state: 10s
-#        sliding-window-size: 10
-#      teacherService:
-#        failure-rate-threshold: 50
-#        wait-duration-in-open-state: 10s
-#        sliding-window-size: 10
-#      attendanceService:
-#        failure-rate-threshold: 50
-#        wait-duration-in-open-state: 10s
-#        sliding-window-size: 10
-#
-## Feign Circuit Breaker
-#feign:
-#  circuitbreaker:
-#    enabled: true
-#
-## Eureka Client
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/student_pdb
+    username: system
+    password: oracle123
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+  cloud:
+    config:
+      enabled: false
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      attendance-service:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 5000
+        sliding-window-size: 10
+
+feign:
+  circuitbreaker:
+    enabled: true
+    group:
+      enabled: true
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 10000
+
+logging:
+  level:
+    com.university: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    feign: DEBUG

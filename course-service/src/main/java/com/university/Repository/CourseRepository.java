@@ -8,7 +8,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     List<Course> findBySemester(String semester);
     List<Course> findByTeacherId(Long teacherId);
     List<Course> findByTeacherIdIsNull();
-
+    boolean existsByCourseCode(String courseCode);
 
 }
 

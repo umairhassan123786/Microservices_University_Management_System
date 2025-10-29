@@ -1,10 +1,8 @@
 package com.university.filter;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 import org.springframework.web.util.ContentCachingResponseWrapper;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,17 +11,13 @@ import java.io.IOException;
 
 @Component
 public class ContentCachingFilter extends OncePerRequestFilter {
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        // Wrap request and response to cache content
         ContentCachingRequestWrapper wrappedRequest = new ContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper wrappedResponse = new ContentCachingResponseWrapper(response);
-
         try {
             filterChain.doFilter(wrappedRequest, wrappedResponse);
         } finally {
-            // Copy response body to original response
             wrappedResponse.copyBodyToResponse();
         }
     }

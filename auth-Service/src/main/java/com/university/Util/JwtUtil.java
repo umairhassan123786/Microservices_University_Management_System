@@ -1,10 +1,12 @@
 package com.university.Util;
-
+import com.university.Entities.User;
+import com.university.Repository.UserRepository;
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
+import java.util.Optional;
 
 @Component
 public class JwtUtil {
@@ -15,14 +17,14 @@ public class JwtUtil {
     @Value("${jwt.expiration}")
     private Long expiration;
 
-    // ✅ REMOVE TokenBlacklistService dependency
-    // @Autowired
-    // private TokenBlacklistService tokenBlacklistService;
+    @Autowired
+    private UserRepository userRepository;
 
-    public String generateToken(String username, String role) {
+    public String generateToken(String username, String role,Long userId) {
         return Jwts.builder()
                 .setSubject(username)
                 .claim("role", role)
+                .claim("userId", userId)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(SignatureAlgorithm.HS512, secret)
@@ -55,15 +57,28 @@ public class JwtUtil {
 
     public boolean validateToken(String token) {
         try {
-            // ✅ Remove blacklist check from here
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
         } catch (ExpiredJwtException e) {
-            System.out.println("❌ Token expired");
+            System.out.println("Token expired");
             return false;
         } catch (Exception e) {
-            System.out.println("❌ Token validation failed: " + e.getMessage());
+            System.out.println("Token validation failed: " + e.getMessage());
             return false;
+        }
+    }
+    public Long getUserIdFromToken(String token) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(secret)
+                .parseClaimsJws(token)
+                .getBody();
+
+        if (claims.get("userId") != null) {
+            return claims.get("userId", Long.class);
+        } else {
+            String username = claims.getSubject();
+            Optional<User> user = userRepository.findByUsername(username);
+            return user.map(User::getId).orElse(null);
         }
     }
 }

@@ -1,9 +1,5 @@
 package com.university.Service;
-
-import com.university.DTO.JwtResponse;
-import com.university.DTO.LoginRequest;
-import com.university.DTO.RegisterRequest;
-import com.university.DTO.TokenValidationResponse;
+import com.university.DTO.*;
 import com.university.Entities.User;
 import com.university.Repository.UserRepository;
 import com.university.Util.JwtUtil;
@@ -40,24 +36,39 @@ public class AuthService {
     private StudentServiceClient studentServiceClient;
 
     public JwtResponse login(LoginRequest request) {
+        System.out.println("LOGIN ATTEMPT - Username: " + request.getUsername());
+
         String username = request.getUsername().trim();
         Optional<User> userOptional = userRepository.findByUsername(username);
+
         if (userOptional.isEmpty()) {
+            System.out.println("USER NOT FOUND: " + username);
             throw new RuntimeException("User not found");
         }
+
         User user = userOptional.get();
+        System.out.println("USER FOUND: " + user.getUsername() + ", Role: " + user.getRole());
+
         boolean passwordMatch = passwordUtil.matches(request.getPassword(), user.getPassword());
+        System.out.println("PASSWORD MATCH: " + passwordMatch);
+
         if (!passwordMatch) {
             throw new RuntimeException("Invalid password");
         }
+
         if (!user.isActive()) {
             throw new RuntimeException("User account is deactivated");
         }
-        String token = jwtUtil.generateToken(user.getUsername(), user.getRole());
-        Date expiryDate = jwtUtil.getExpirationDateFromToken(token);
-        return new JwtResponse(token, "Bearer", expiryDate, user.getUsername(), user.getRole());
-    }
 
+        System.out.println("GENERATING JWT TOKEN...");
+        String token = jwtUtil.generateToken(user.getUsername(), user.getRole(), user.getId());
+        System.out.println("TOKEN GENERATED: " + (token != null ? "SUCCESS" : "FAILED"));
+
+        Date expiryDate = jwtUtil.getExpirationDateFromToken(token);
+        JwtResponse response = new JwtResponse(token, "Bearer", expiryDate, user.getUsername(), user.getRole(), user.getId());
+
+        return response;
+    }
     public String extractTokenFromHeader(String authorizationHeader) {
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             return authorizationHeader.substring(7);
@@ -67,24 +78,29 @@ public class AuthService {
 
     public TokenValidationResponse validateToken(String token) {
         try {
-            // Pehle check karein token blacklisted toh nahi hai
             if (tokenBlacklistService.isTokenBlacklisted(token)) {
-                return new TokenValidationResponse(false, "Token has been invalidated", null, null);
+                return new TokenValidationResponse(false, "Token has been invalidated", null, null, null);
             }
 
-            // Phir JWT validation
             boolean isValid = jwtUtil.validateToken(token);
             if (isValid) {
                 String username = jwtUtil.getUsernameFromToken(token);
                 String role = jwtUtil.getRoleFromToken(token);
-                return new TokenValidationResponse(true, "Valid token", username, role);
+
+
+                Optional<User> userOptional = userRepository.findByUsername(username);
+                if (userOptional.isPresent()) {
+                    User user = userOptional.get();
+                    return new TokenValidationResponse(true, "Valid token", username, role, user.getId());
+                } else {
+                    return new TokenValidationResponse(false, "User not found", null, null, null);
+                }
             }
-            return new TokenValidationResponse(false, "Invalid token", null, null);
+            return new TokenValidationResponse(false, "Invalid token", null, null, null);
         } catch (Exception e) {
-            return new TokenValidationResponse(false, "Token validation failed", null, null);
+            return new TokenValidationResponse(false, "Token validation failed", null, null, null);
         }
     }
-
     public boolean logout(String token) {
         try {
             tokenBlacklistService.invalidateToken(token);
@@ -96,28 +112,22 @@ public class AuthService {
     }
 
     public Map<String, Object> register(RegisterRequest registerRequest) {
-        // ✅ Check if username already exists
         if (userRepository.findByUsername(registerRequest.getUsername()).isPresent()) {
             throw new RuntimeException("Username '" + registerRequest.getUsername() + "' already exists");
         }
 
-        // ✅ Check if email already exists
         if (userRepository.findByEmail(registerRequest.getEmail()).isPresent()) {
             throw new RuntimeException("Email '" + registerRequest.getEmail() + "' already exists");
         }
 
-        // ✅ For STUDENT - check roll number
         if ("STUDENT".equals(registerRequest.getRole()) && registerRequest.getRollNumber() != null) {
-            // Call student service to check roll number
             Boolean rollNumberExists = studentServiceClient.existsByRollNumber(registerRequest.getRollNumber());
             if (rollNumberExists != null && rollNumberExists) {
                 throw new RuntimeException("Roll number '" + registerRequest.getRollNumber() + "' already exists");
             }
         }
 
-        // ✅ For TEACHER - check teacher ID
         if ("TEACHER".equals(registerRequest.getRole()) && registerRequest.getTeacherId() != null) {
-            // Call teacher service to check teacher ID
             Boolean teacherIdExists = teacherServiceClient.existsByTeacherId(registerRequest.getTeacherId());
             if (teacherIdExists != null && teacherIdExists) {
                 throw new RuntimeException("Teacher ID '" + registerRequest.getTeacherId() + "' already exists");
@@ -168,12 +178,11 @@ public class AuthService {
             teacherData.put("qualification", request.getQualification());
             teacherData.put("teacherId", generateTeacherId());
 
-            System.out.println("📤 Sending teacher data: " + teacherData);
+            System.out.println("Sending teacher data: " + teacherData);
 
-            // ✅ Try with explicit error handling
             try {
                 Map<String, Object> response = teacherServiceClient.createTeacher(teacherData);
-                System.out.println("✅ Teacher service response: " + response);
+                System.out.println("Teacher service response: " + response);
 
                 if (response != null && response.containsKey("error")) {
                     throw new RuntimeException("Teacher service error: " + response.get("error"));
@@ -191,17 +200,16 @@ public class AuthService {
                     throw new RuntimeException("Teacher service communication failed: " + e.getMessage());
                 }
             } catch (Exception e) {
-                System.out.println("❌ General Exception: " + e.getMessage());
+                System.out.println("General Exception: " + e.getMessage());
                 throw new RuntimeException("Failed to communicate with teacher service: " + e.getMessage());
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Error in createTeacherProfile: " + e.getMessage());
+            System.out.println("Error in createTeacherProfile: " + e.getMessage());
             throw new RuntimeException("Failed to create teacher profile: " + e.getMessage());
         }
     }    public Object getTeacherByUserId(Long userId) {
         try {
-            // Pehle check karein user exists aur teacher hai ya nahi
             Optional<User> userOptional = userRepository.findById(userId);
             if (userOptional.isEmpty()) {
                 throw new RuntimeException("User not found with ID: " + userId);
@@ -211,8 +219,6 @@ public class AuthService {
             if (!"TEACHER".equals(user.getRole())) {
                 throw new RuntimeException("User is not a teacher");
             }
-
-            // Teacher service se teacher data fetch karein
             Object teacher = teacherServiceClient.getTeacherByUserId(userId);
             return teacher;
         } catch (Exception e) {
@@ -221,7 +227,6 @@ public class AuthService {
         }
     }
     private String generateTeacherId() {
-        // Teacher ID generate karne ka logic - aap apne requirement ke hisaab modify kar sakte hain
         String prefix = "TCH";
         String timestamp = String.valueOf(System.currentTimeMillis());
         String randomNum = String.valueOf((int)(Math.random() * 1000));
@@ -238,12 +243,10 @@ public class AuthService {
             studentData.put("department", request.getDepartment());
             studentData.put("active", true);
 
-            System.out.println("📤 Sending student data: " + studentData);
-
-            // ✅ Better error handling for student service
+            System.out.println("Sending student data: " + studentData);
             try {
                 Map<String, Object> response = studentServiceClient.createStudent(studentData);
-                System.out.println("✅ Student service response: " + response);
+                System.out.println(" Student service response: " + response);
 
                 if (response != null && response.containsKey("error")) {
                     throw new RuntimeException("Student service error: " + response.get("error"));

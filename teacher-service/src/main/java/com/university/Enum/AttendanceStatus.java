@@ -1,4 +1,7 @@
 package com.university.Enum;
-
-public class AttendanceStatus {
+public enum AttendanceStatus {
+    PRESENT,
+    ABSENT,
+    LATE,
+    HALF_DAY
 }
