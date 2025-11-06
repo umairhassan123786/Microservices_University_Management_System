@@ -1,13 +1,13 @@
 package com.university.Service;
 import com.university.DTO.*;
 import com.university.Entities.Student;
+import com.university.Entities.StudentES;
 import com.university.Repository.StudentRepository;
 import com.university.client.AttendanceServiceClient;
 import com.university.client.CourseServiceClient;
 import com.university.client.TeacherServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +28,8 @@ public class StudentService {
 
     @Autowired
     private TeacherServiceClient teacherServiceClient;
+    @Autowired
+    private ElasticsearchService elasticsearchService;
 
     public List<CourseDTO> getStudentCourses(Long studentId) {
         Student student = studentRepository.findById(studentId)
@@ -40,7 +42,6 @@ public class StudentService {
                 return Collections.emptyList();
             }
 
-            // Convert CourseServiceResponseDTO to CourseDTO
             List<CourseDTO> courses = courseResponses.stream()
                     .map(response -> {
                         CourseDTO course = new CourseDTO();
@@ -160,10 +161,19 @@ public class StudentService {
             student.setSemester(studentData.get("semester").toString());
             student.setDepartment(studentData.get("department").toString());
             student.setActive(true);
-
             Student savedStudent = studentRepository.save(student);
-            System.out.println("Student created successfully: " + savedStudent.getId());
-
+            /// for elastic search using studentes class
+            StudentES studentES = new StudentES(
+                    savedStudent.getId(),           // id field
+                    savedStudent.getId(),           // studentId field (same as MySQL ID)
+                    savedStudent.getName(),
+                    savedStudent.getEmail(),
+                    savedStudent.getRollNumber(),
+                    savedStudent.getDepartment(),
+                    savedStudent.getSemester(),
+                    savedStudent.getActive()
+            );
+            elasticsearchService.syncStudent(studentES);
             return Map.of(
                     "id", savedStudent.getId(),
                     "rollNumber", savedStudent.getRollNumber(),
@@ -195,5 +205,52 @@ public class StudentService {
 
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
+    }
+
+    public Student getStudentProfileByES(Long studentId) {
+        Optional<StudentES> studentES = elasticsearchService.findByStudentId(studentId);
+        if (studentES.isPresent()) {
+            return convertToStudent(studentES.get());
+        }
+
+        // Fallback to MySQL
+        Optional<Student> student = studentRepository.findById(studentId);
+        if (student.isPresent()) {
+            syncToElasticsearch(student.get()); // Cache for next time
+            return student.get();
+        }
+
+        throw new RuntimeException("Student not found");
+    }
+    private void syncToElasticsearch(Student student) {
+        try {
+            StudentES studentES = new StudentES(
+                    student.getId(),
+                    student.getUserId(),
+                    student.getName(),
+                    student.getEmail(),
+                    student.getRollNumber(),
+                    student.getDepartment(),
+                    student.getSemester(),
+                    student.getActive()
+            );
+            elasticsearchService.syncStudent(studentES);
+        } catch (Exception e) {
+            System.err.println("Elasticsearch sync failed: " + e.getMessage());
+        }
+    }
+
+    // Convert Elasticsearch entity to Student
+    private Student convertToStudent(StudentES studentES) {
+        Student student = new Student();
+        student.setId(studentES.getStudentId());
+        student.setUserId(studentES.getUserId());
+        student.setName(studentES.getName());
+        student.setEmail(studentES.getEmail());
+        student.setRollNumber(studentES.getRollNumber());
+        student.setDepartment(studentES.getDepartment());
+        student.setSemester(studentES.getSemester());
+        student.setActive(studentES.getActive());
+        return student;
     }
 }

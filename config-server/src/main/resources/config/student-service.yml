@@ -15,19 +15,30 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-        group-id: university-group
-        auto-offset-reset: earliest
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: university-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  elasticsearch:
+    uris: http://localhost:9200
+    connection-timeout: 2s
+    socket-timeout: 5s
+  data:
+    elasticsearch:
+      repositories:
+        enabled: false
+university:
+  elasticsearch:
+    student-index: students
 
 server:
   port: 8083
   servlet:
     context-path: /
+
 eureka:
   client:
     service-url:
@@ -53,8 +64,6 @@ management:
 feign:
   circuitbreaker:
     enabled: true
-    group:
-      enabled: true
   client:
     config:
       default:

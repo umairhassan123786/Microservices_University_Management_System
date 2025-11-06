@@ -152,4 +152,36 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
+
+
+    @GetMapping("/{studentId}/profileES")
+    public ResponseEntity<Student> getStudentProfileByES(@PathVariable Long studentId) {
+        try {
+            Student profile = studentService.getStudentProfileByES(studentId);
+            return ResponseEntity.ok(profile);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+//    @GetMapping("/searchES")
+//    public ResponseEntity<List<Student>> searchStudentsByES(@RequestParam String name) {
+//        try {
+//            List<Student> students = studentService.searchStudentsByName(name);
+//            return ResponseEntity.ok(students);
+//        } catch (Exception e) {
+//            return ResponseEntity.badRequest().build();
+//        }
+//    }
+//
+//    // NEW: Get by department
+//    @GetMapping("/department/{department}")
+//    public ResponseEntity<List<Student>> getByDepartment(@PathVariable String department) {
+//        try {
+//            List<Student> students = studentService.getStudentsByDepartment(department);
+//            return ResponseEntity.ok(students);
+//        } catch (Exception e) {
+//            return ResponseEntity.badRequest().build();
+//        }
+//    }
 }
