@@ -12,7 +12,8 @@ import java.util.Map;
 @FeignClient(
         name = "teacher-service",
         path = "/api/teachers",
-        configuration = FeignConfig.class
+        configuration = FeignConfig.class,
+        fallback = TeacherServiceClientFallback.class
 )
 public interface TeacherServiceClient {
 

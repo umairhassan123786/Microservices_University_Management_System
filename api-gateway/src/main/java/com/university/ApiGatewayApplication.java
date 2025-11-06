@@ -12,6 +12,7 @@ import java.util.Collections;
 
 @SpringBootApplication
 public class ApiGatewayApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(ApiGatewayApplication.class, args);
     }
@@ -20,19 +21,15 @@ public class ApiGatewayApplication {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("auth-service", r -> r.path("/api/auth/**")
-                        .uri("http://localhost:8081"))
-
+                        .uri("lb://auth-service"))
                 .route("student-service", r -> r.path("/api/students/**")
-                        .uri("http://localhost:8083"))
-
+                        .uri("lb://student-service"))
                 .route("teacher-service", r -> r.path("/api/teachers/**")
-                        .uri("http://localhost:8082"))
-
+                        .uri("lb://teacher-service"))
                 .route("course-service", r -> r.path("/api/courses/**")
-                        .uri("http://localhost:8084"))
-
+                        .uri("lb://course-service"))
                 .route("attendance-service", r -> r.path("/api/attendance/**")
-                        .uri("http://localhost:8085"))
+                        .uri("lb://attendance-service"))
                 .build();
     }
 
@@ -43,6 +40,7 @@ public class ApiGatewayApplication {
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
         corsConfig.setExposedHeaders(Arrays.asList("Authorization", "X-User-Id", "X-User-Name", "X-User-Role"));
+        corsConfig.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfig);

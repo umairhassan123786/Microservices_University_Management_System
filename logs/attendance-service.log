@@ -1,741 +1,366 @@
-2025-10-29 09:48:15.826 [,] [main] INFO  c.u.AttendanceServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-10-29 09:48:17.736 [,] [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-29 09:48:18.125 [,] [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 352 ms. Found 1 JPA repository interfaces.
-2025-10-29 09:48:19.103 [,] [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=732ec2f0-4d3b-3120-8032-1f1681bf26ba
-2025-10-29 09:48:23.362 [,] [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
-2025-10-29 09:48:23.438 [,] [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-10-29 09:48:23.439 [,] [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-10-29 09:48:24.467 [,] [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-10-29 09:48:24.468 [,] [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8605 ms
-2025-10-29 09:48:27.108 [,] [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-29 09:48:27.260 [,] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
-2025-10-29 09:48:27.932 [,] [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2025-10-29 09:48:28.425 [,] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-10-29 09:48:29.584 [,] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-10-29 09:48:29.641 [,] [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2025-10-29 09:48:32.803 [,] [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2025-10-29 09:48:32.837 [,] [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-29 09:48:35.021 [,] [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-29 09:48:39.531 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2025-10-29 09:48:39.707 [,] [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-10-29 09:48:41.338 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2025-10-29 09:48:43.197 [,] [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-10-29 09:48:43.859 [,] [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-10-29 09:48:43.985 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-10-29 09:48:44.013 [,] [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 09:48:44.121 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-10-29 09:48:44.122 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-10-29 09:48:44.122 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-10-29 09:48:44.122 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-10-29 09:48:44.123 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-10-29 09:48:44.123 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-10-29 09:48:44.124 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-10-29 09:48:44.811 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-10-29 09:48:44.817 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-10-29 09:48:44.823 [,] [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-10-29 09:48:44.835 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1761713324833 with initial instances count: 1
-2025-10-29 09:48:44.872 [,] [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application ATTENDANCE-SERVICE with eureka with status UP
-2025-10-29 09:48:44.874 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1761713324873, current=UP, previous=STARTING]
-2025-10-29 09:48:44.877 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
-2025-10-29 09:48:44.915 [,] [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
-2025-10-29 09:48:44.917 [,] [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8085
-2025-10-29 09:48:44.991 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
-2025-10-29 09:48:46.528 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2025-10-29 09:48:46.595 [,] [main] INFO  c.u.AttendanceServiceApplication - Started AttendanceServiceApplication in 34.944 seconds (JVM running for 35.564)
-2025-10-29 09:53:44.139 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 09:53:44.165 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-29 09:53:44.166 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-10-29 09:53:44.171 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
-2025-10-29 09:53:44.244 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:53:44.244 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - TraceID: c7443d03ad6189ca
-2025-10-29 09:53:44.246 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:53:44.246 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:53:44.247 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=c7443d03ad6189ca, content-length=179, x-b3-traceid=c7443d03ad6189ca, x-b3-spanid=0cee6818b5eea0e2, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:53:44.248 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:53:44.248 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713624244
-2025-10-29 09:53:44.749 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:53:44.750 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - TraceID: c7443d03ad6189ca
-2025-10-29 09:53:44.750 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:53:44.750 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger -  Duration: 505ms
-2025-10-29 09:53:44.759 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 21,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-15",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:53:44.6182207",
-  "updatedAt" : "2025-10-29T09:53:44.6182207"
-}
-2025-10-29 09:53:44.760 [c7443d03ad6189ca,0cee6818b5eea0e2] [http-nio-8085-exec-3] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:53:55.060 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:53:55.060 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: c719ad108d0cc6c8
-2025-10-29 09:53:55.061 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:53:55.061 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:53:55.062 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=c719ad108d0cc6c8, content-length=179, x-b3-traceid=c719ad108d0cc6c8, x-b3-spanid=0dce152f0bbc1565, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:53:55.062 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:53:55.062 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713635060
-2025-10-29 09:53:55.076 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:53:55.076 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: c719ad108d0cc6c8
-2025-10-29 09:53:55.076 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Status: 400
-2025-10-29 09:53:55.076 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger -  Duration: 16ms
-2025-10-29 09:53:55.078 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Response Body: Attendance already marked for this student, course and date
-2025-10-29 09:53:55.079 [c719ad108d0cc6c8,0dce152f0bbc1565] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:55:03.642 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:55:03.642 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: 2d6cf83ff8d8344b
-2025-10-29 09:55:03.642 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:55:03.642 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:55:03.643 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=2d6cf83ff8d8344b, content-length=179, x-b3-traceid=2d6cf83ff8d8344b, x-b3-spanid=b422a31d0afc1824, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:55:03.643 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:55:03.643 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713703642
-2025-10-29 09:55:03.661 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:55:03.661 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: 2d6cf83ff8d8344b
-2025-10-29 09:55:03.661 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:55:03.662 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger -  Duration: 19ms
-2025-10-29 09:55:03.662 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 22,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-14",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:03.6480098",
-  "updatedAt" : "2025-10-29T09:55:03.6480098"
-}
-2025-10-29 09:55:03.662 [2d6cf83ff8d8344b,b422a31d0afc1824] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:55:09.597 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:55:09.597 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - TraceID: 129618da082d7fa6
-2025-10-29 09:55:09.598 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:55:09.598 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:55:09.598 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=129618da082d7fa6, content-length=179, x-b3-traceid=129618da082d7fa6, x-b3-spanid=648def5c216bfff8, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:55:09.598 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:55:09.599 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713709597
-2025-10-29 09:55:09.620 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:55:09.620 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - TraceID: 129618da082d7fa6
-2025-10-29 09:55:09.620 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:55:09.620 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger -  Duration: 23ms
-2025-10-29 09:55:09.621 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 23,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-18",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:09.6069408",
-  "updatedAt" : "2025-10-29T09:55:09.6069408"
-}
-2025-10-29 09:55:09.621 [129618da082d7fa6,648def5c216bfff8] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:55:16.828 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:55:16.828 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 8ee9ffd86203d0c6
-2025-10-29 09:55:16.828 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:55:16.829 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:55:16.829 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=8ee9ffd86203d0c6, content-length=179, x-b3-traceid=8ee9ffd86203d0c6, x-b3-spanid=05bdcbbc04a7b39c, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:55:16.829 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:55:16.829 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713716828
-2025-10-29 09:55:16.853 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:55:16.854 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 8ee9ffd86203d0c6
-2025-10-29 09:55:16.854 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:55:16.854 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger -  Duration: 25ms
-2025-10-29 09:55:16.855 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 24,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-19",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:16.8378094",
-  "updatedAt" : "2025-10-29T09:55:16.8378094"
-}
-2025-10-29 09:55:16.855 [8ee9ffd86203d0c6,05bdcbbc04a7b39c] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:55:23.733 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:55:23.734 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - TraceID: 71cba16df657dc07
-2025-10-29 09:55:23.734 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:55:23.734 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:55:23.734 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=71cba16df657dc07, content-length=179, x-b3-traceid=71cba16df657dc07, x-b3-spanid=611e099ea7fabc95, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:55:23.734 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:55:23.735 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713723733
-2025-10-29 09:55:23.739 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:55:23.740 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - TraceID: 71cba16df657dc07
-2025-10-29 09:55:23.740 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Status: 400
-2025-10-29 09:55:23.740 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger -  Duration: 6ms
-2025-10-29 09:55:23.740 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Response Body: Attendance already marked for this student, course and date
-2025-10-29 09:55:23.740 [71cba16df657dc07,611e099ea7fabc95] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:55:33.709 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:55:33.709 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: 689e6a5ec9930f67
-2025-10-29 09:55:33.710 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:55:33.710 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:55:33.710 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=689e6a5ec9930f67, content-length=179, x-b3-traceid=689e6a5ec9930f67, x-b3-spanid=119bf19511defe2d, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:55:33.710 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:55:33.711 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713733709
-2025-10-29 09:55:33.723 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:55:33.724 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: 689e6a5ec9930f67
-2025-10-29 09:55:33.724 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:55:33.724 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger -  Duration: 14ms
-2025-10-29 09:55:33.724 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 25,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-20",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:33.716866",
-  "updatedAt" : "2025-10-29T09:55:33.716866"
-}
-2025-10-29 09:55:33.724 [689e6a5ec9930f67,119bf19511defe2d] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:56:04.247 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:56:04.247 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: b544f5853e3dc68b
-2025-10-29 09:56:04.247 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/student/41
-2025-10-29 09:56:04.247 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:56:04.248 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=b7ad1490296a475c, x-b3-traceid=b544f5853e3dc68b, x-b3-spanid=9267020106ef1a72, x-b3-sampled=0, host=localhost:8085, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
-2025-10-29 09:56:04.248 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:56:04.248 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713764247
-2025-10-29 09:56:04.288 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:56:04.289 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: b544f5853e3dc68b
-2025-10-29 09:56:04.289 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:56:04.289 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger -  Duration: 41ms
-2025-10-29 09:56:04.290 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Response Body: [ ]
-2025-10-29 09:56:04.290 [b544f5853e3dc68b,9267020106ef1a72] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:56:15.565 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:56:15.565 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: fe805ad31a2948cd
-2025-10-29 09:56:15.565 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/student/42
-2025-10-29 09:56:15.565 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:56:15.565 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=bb80479329d9a6ab, x-b3-traceid=fe805ad31a2948cd, x-b3-spanid=db4a5102fe6a4342, x-b3-sampled=0, host=localhost:8085, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
-2025-10-29 09:56:15.566 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:56:15.566 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713775565
-2025-10-29 09:56:15.571 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:56:15.571 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: fe805ad31a2948cd
-2025-10-29 09:56:15.571 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:56:15.572 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger -  Duration: 6ms
-2025-10-29 09:56:15.572 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Response Body: [ ]
-2025-10-29 09:56:15.572 [fe805ad31a2948cd,db4a5102fe6a4342] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:57:16.504 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:57:16.504 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: 3c48edb9608c03a2
-2025-10-29 09:57:16.504 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:57:16.504 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:57:16.505 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=3c48edb9608c03a2, content-length=179, x-b3-traceid=3c48edb9608c03a2, x-b3-spanid=7aae0af7feb6222a, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:57:16.505 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:57:16.505 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713836504
-2025-10-29 09:57:16.517 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:57:16.517 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - TraceID: 3c48edb9608c03a2
-2025-10-29 09:57:16.518 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:57:16.518 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger -  Duration: 13ms
-2025-10-29 09:57:16.518 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 26,
-  "studentId" : 42,
-  "courseId" : 3,
-  "date" : "2025-10-29",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:57:16.5115307",
-  "updatedAt" : "2025-10-29T09:57:16.5115307"
-}
-2025-10-29 09:57:16.518 [3c48edb9608c03a2,7aae0af7feb6222a] [http-nio-8085-exec-4] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:57:21.001 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:57:21.001 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: a0829807b8d7b013
-2025-10-29 09:57:21.001 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:57:21.001 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:57:21.001 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=a0829807b8d7b013, content-length=179, x-b3-traceid=a0829807b8d7b013, x-b3-spanid=5bdaa07f4686e3b4, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:57:21.002 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:57:21.002 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713841001
-2025-10-29 09:57:21.007 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:57:21.007 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: a0829807b8d7b013
-2025-10-29 09:57:21.008 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Status: 400
-2025-10-29 09:57:21.008 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger -  Duration: 6ms
-2025-10-29 09:57:21.008 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Response Body: Attendance already marked for this student, course and date
-2025-10-29 09:57:21.009 [a0829807b8d7b013,5bdaa07f4686e3b4] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:57:27.674 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:57:27.674 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - TraceID: c8c9b55f0bea2dd8
-2025-10-29 09:57:27.674 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - URL: POST http://localhost:8085/api/attendance/mark
-2025-10-29 09:57:27.674 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:57:27.674 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=c8c9b55f0bea2dd8, content-length=179, x-b3-traceid=c8c9b55f0bea2dd8, x-b3-spanid=6e3a0e187f5af73e, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 09:57:27.674 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:57:27.675 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713847674
-2025-10-29 09:57:27.695 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:57:27.695 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - TraceID: c8c9b55f0bea2dd8
-2025-10-29 09:57:27.695 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:57:27.695 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger -  Duration: 21ms
-2025-10-29 09:57:27.695 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - Response Body: {
-  "id" : 27,
-  "studentId" : 42,
-  "courseId" : 3,
-  "date" : "2025-10-28",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:57:27.6823971",
-  "updatedAt" : "2025-10-29T09:57:27.6823971"
-}
-2025-10-29 09:57:27.695 [c8c9b55f0bea2dd8,6e3a0e187f5af73e] [http-nio-8085-exec-8] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:57:33.759 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 09:57:33.760 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: c4be1602e4ae1ae9
-2025-10-29 09:57:33.760 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/student/42
-2025-10-29 09:57:33.760 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 09:57:33.760 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=77fbe16468a0a228, x-b3-traceid=c4be1602e4ae1ae9, x-b3-spanid=aed44421eae56660, x-b3-sampled=0, host=localhost:8085, connection=keep-alive, accept=*/*, user-agent=Java/17.0.12}
-2025-10-29 09:57:33.760 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 09:57:33.760 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761713853759
-2025-10-29 09:57:33.772 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 09:57:33.772 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: c4be1602e4ae1ae9
-2025-10-29 09:57:33.772 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 09:57:33.773 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger -  Duration: 13ms
-2025-10-29 09:57:33.773 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Response Body: [ {
-  "id" : 26,
-  "studentId" : 42,
-  "courseId" : 3,
-  "date" : "2025-10-29",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:57:16",
-  "updatedAt" : "2025-10-29T09:57:16"
-}, {
-  "id" : 27,
-  "studentId" : 42,
-  "courseId" : 3,
-  "date" : "2025-10-28",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:57:27",
-  "updatedAt" : "2025-10-29T09:57:27"
-} ]
-2025-10-29 09:57:33.773 [c4be1602e4ae1ae9,aed44421eae56660] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 09:58:44.157 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:02:13.128 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:02:13.129 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: e5ff6d1fb6e44f48
-2025-10-29 10:02:13.129 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/teachers/3/courses/3/attendance
-2025-10-29 10:02:13.129 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:02:13.129 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Headers: {postman-token=d8bdb043-0ea0-474a-a12d-8bbfe3fdab07, host=localhost:8085, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.49.0, accept=*/*}
-2025-10-29 10:02:13.129 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:02:13.129 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714133128
-2025-10-29 10:02:13.131 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:02:13.131 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: e5ff6d1fb6e44f48
-2025-10-29 10:02:13.131 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Status: 404
-2025-10-29 10:02:13.131 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger -  Duration: 3ms
-2025-10-29 10:02:13.131 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Response Body: [Empty Body]
-2025-10-29 10:02:13.131 [e5ff6d1fb6e44f48,e5ff6d1fb6e44f48] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:02:13.135 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:02:13.136 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: 19a2e58588f44d2346175e98
-2025-10-29 10:02:13.136 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/error
-2025-10-29 10:02:13.136 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:02:13.136 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Headers: {postman-token=d8bdb043-0ea0-474a-a12d-8bbfe3fdab07, host=localhost:8085, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.49.0, accept=*/*}
-2025-10-29 10:02:13.136 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:02:13.136 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714133135
-2025-10-29 10:02:13.143 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:02:13.143 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: 19a2e58588f44d2346175e98
-2025-10-29 10:02:13.143 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Status: 404
-2025-10-29 10:02:13.143 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger -  Duration: 8ms
-2025-10-29 10:02:13.149 [19a2e58588f44d2346175e98,] [http-nio-8085-exec-9] ERROR o.s.w.servlet.HandlerExecutionChain - HandlerInterceptor.afterCompletion threw exception
-java.lang.ClassCastException: class org.apache.catalina.connector.ResponseFacade cannot be cast to class org.springframework.web.util.ContentCachingResponseWrapper (org.apache.catalina.connector.ResponseFacade and org.springframework.web.util.ContentCachingResponseWrapper are in unnamed module of loader 'app')
-	at com.university.logging.RequestResponseLogger.afterCompletion(RequestResponseLogger.java:80) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.triggerAfterCompletion(HandlerExecutionChain.java:178) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.83.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.83.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68) ~[spring-cloud-sleuth-instrumentation-3.1.9.jar:3.1.9]
-	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131) ~[spring-cloud-sleuth-autoconfigure-3.1.9.jar:3.1.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:661) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:427) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:357) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:294) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:377) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:237) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:166) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:103) ~[spring-cloud-sleuth-instrumentation-3.1.9.jar:3.1.9]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-2025-10-29 10:02:30.712 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:02:30.713 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - TraceID: 266d5bb81eddebd4
-2025-10-29 10:02:30.713 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/course/3
-2025-10-29 10:02:30.713 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:02:30.713 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=266d5bb81eddebd4, x-b3-traceid=266d5bb81eddebd4, x-b3-spanid=6ce181b1c4c116cb, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 10:02:30.713 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:02:30.713 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714150712
-2025-10-29 10:02:30.731 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:02:30.731 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - TraceID: 266d5bb81eddebd4
-2025-10-29 10:02:30.731 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 10:02:30.731 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger -  Duration: 19ms
-2025-10-29 10:02:30.732 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - Response Body: [ {
-  "id" : 1,
-  "studentId" : 3,
-  "courseId" : 3,
-  "date" : "2024-01-20",
-  "status" : "ABSENT",
-  "semester" : "Spring 2024",
-  "remarks" : "Informed absence",
-  "createdAt" : "2025-10-26T14:46:33",
-  "updatedAt" : "2025-10-26T14:47:45"
-}, {
-  "id" : 21,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-15",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:53:44",
-  "updatedAt" : "2025-10-29T09:53:44"
-}, {
-  "id" : 22,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-14",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:03",
-  "updatedAt" : "2025-10-29T09:55:03"
-}, {
-  "id" : 23,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-18",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:09",
-  "updatedAt" : "2025-10-29T09:55:09"
-}, {
-  "id" : 24,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-19",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:16",
-  "updatedAt" : "2025-10-29T09:55:16"
-}, {
-  "id" : 25,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-20",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:55:33",
-  "updatedAt" : "2025-10-29T09:55:33"
-}, {
-  "id" : 26,
-  "studentId" : 42,
-  "courseId" : 3,
-  "date" : "2025-10-29",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:57:16",
-  "updatedAt" : "2025-10-29T09:57:16"
-}, {
-  "id" : 27,
-  "studentId" : 42,
-  "courseId" : 3,
-  "date" : "2025-10-28",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:57:27",
-  "updatedAt" : "2025-10-29T09:57:27"
-} ]
-2025-10-29 10:02:30.732 [266d5bb81eddebd4,6ce181b1c4c116cb] [http-nio-8085-exec-10] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:03:44.160 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:04:22.265 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:04:22.266 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: 07a1b4c1f4094a87
-2025-10-29 10:04:22.266 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/course/3/date/2024-01-15
-2025-10-29 10:04:22.266 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:04:22.266 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Headers: {x-b3-parentspanid=07a1b4c1f4094a87, x-b3-traceid=07a1b4c1f4094a87, x-b3-spanid=566284d445d008ac, x-b3-sampled=0, host=localhost:8085, content-type=application/json, connection=keep-alive, accept=application/json, user-agent=Java/17.0.12}
-2025-10-29 10:04:22.266 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:04:22.266 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714262265
-2025-10-29 10:04:22.294 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:04:22.294 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - TraceID: 07a1b4c1f4094a87
-2025-10-29 10:04:22.294 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 10:04:22.294 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger -  Duration: 29ms
-2025-10-29 10:04:22.295 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - Response Body: [ {
-  "id" : 21,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-15",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:53:44",
-  "updatedAt" : "2025-10-29T09:53:44"
-} ]
-2025-10-29 10:04:22.295 [07a1b4c1f4094a87,566284d445d008ac] [http-nio-8085-exec-7] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:08:26.880 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:26.881 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 4860a67bd68cd763
-2025-10-29 10:08:26.881 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/course/3/date/2024-01-15
-2025-10-29 10:08:26.882 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:26.882 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-US,en;q=0.9, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=document}
-2025-10-29 10:08:26.882 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:26.882 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714506880
-2025-10-29 10:08:26.892 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:26.892 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - TraceID: 4860a67bd68cd763
-2025-10-29 10:08:26.892 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 10:08:26.892 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger -  Duration: 12ms
-2025-10-29 10:08:26.893 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - Response Body: [ {
-  "id" : 21,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-15",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:53:44",
-  "updatedAt" : "2025-10-29T09:53:44"
-} ]
-2025-10-29 10:08:26.893 [4860a67bd68cd763,4860a67bd68cd763] [http-nio-8085-exec-1] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - TraceID: 1fdc748663d5f865
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/course/3/date/2024-01-15
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-US,en;q=0.9, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=document}
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:26.896 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714506896
-2025-10-29 10:08:26.902 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:26.902 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - TraceID: 1fdc748663d5f865
-2025-10-29 10:08:26.902 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 10:08:26.902 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger -  Duration: 6ms
-2025-10-29 10:08:26.902 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - Response Body: [ {
-  "id" : 21,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-15",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:53:44",
-  "updatedAt" : "2025-10-29T09:53:44"
-} ]
-2025-10-29 10:08:26.902 [1fdc748663d5f865,1fdc748663d5f865] [http-nio-8085-exec-2] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:08:27.021 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:27.022 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: 97e43f039d7cf1aa
-2025-10-29 10:08:27.022 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/favicon.ico
-2025-10-29 10:08:27.022 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:27.022 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=no-cors, referer=http://localhost:8085/api/attendance/course/3/date/2024-01-15, sec-fetch-site=same-origin, accept-language=en-US,en;q=0.9, accept=image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=image}
-2025-10-29 10:08:27.022 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:27.022 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714507021
-2025-10-29 10:08:27.024 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:27.024 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: 97e43f039d7cf1aa
-2025-10-29 10:08:27.025 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Status: 404
-2025-10-29 10:08:27.025 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger -  Duration: 3ms
-2025-10-29 10:08:27.025 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Response Body: [Empty Body]
-2025-10-29 10:08:27.025 [97e43f039d7cf1aa,97e43f039d7cf1aa] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: 19a2e5e0d1244d7a53b0b890
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/error
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=no-cors, referer=http://localhost:8085/api/attendance/course/3/date/2024-01-15, sec-fetch-site=same-origin, accept-language=en-US,en;q=0.9, accept=image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=image}
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:27.026 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714507026
-2025-10-29 10:08:27.051 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:27.051 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - TraceID: 19a2e5e0d1244d7a53b0b890
-2025-10-29 10:08:27.051 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger - Status: 404
-2025-10-29 10:08:27.051 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] INFO  c.u.logging.RequestResponseLogger -  Duration: 25ms
-2025-10-29 10:08:27.054 [19a2e5e0d1244d7a53b0b890,] [http-nio-8085-exec-5] ERROR o.s.w.servlet.HandlerExecutionChain - HandlerInterceptor.afterCompletion threw exception
-java.lang.ClassCastException: class org.apache.catalina.connector.ResponseFacade cannot be cast to class org.springframework.web.util.ContentCachingResponseWrapper (org.apache.catalina.connector.ResponseFacade and org.springframework.web.util.ContentCachingResponseWrapper are in unnamed module of loader 'app')
-	at com.university.logging.RequestResponseLogger.afterCompletion(RequestResponseLogger.java:80) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.triggerAfterCompletion(HandlerExecutionChain.java:178) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.83.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.83.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68) ~[spring-cloud-sleuth-instrumentation-3.1.9.jar:3.1.9]
-	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131) ~[spring-cloud-sleuth-autoconfigure-3.1.9.jar:3.1.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:661) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:427) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:357) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:294) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:377) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:237) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:166) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:103) ~[spring-cloud-sleuth-instrumentation-3.1.9.jar:3.1.9]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-2025-10-29 10:08:27.055 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:27.055 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: 478ccb503d17f86e
-2025-10-29 10:08:27.055 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/favicon.ico
-2025-10-29 10:08:27.055 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:27.055 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=no-cors, referer=http://localhost:8085/api/attendance/course/3/date/2024-01-15, sec-fetch-site=same-origin, accept-language=en-US,en;q=0.9, accept=image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=image}
-2025-10-29 10:08:27.055 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:27.056 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714507055
-2025-10-29 10:08:27.056 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:27.056 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: 478ccb503d17f86e
-2025-10-29 10:08:27.056 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Status: 404
-2025-10-29 10:08:27.057 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger -  Duration: 1ms
-2025-10-29 10:08:27.057 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Response Body: [Empty Body]
-2025-10-29 10:08:27.057 [478ccb503d17f86e,478ccb503d17f86e] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: 19a2e5e0d3244d7a5594c3cc
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/error
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=no-cors, referer=http://localhost:8085/api/attendance/course/3/date/2024-01-15, sec-fetch-site=same-origin, accept-language=en-US,en;q=0.9, accept=image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=image}
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:27.058 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714507058
-2025-10-29 10:08:27.060 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:27.060 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - TraceID: 19a2e5e0d3244d7a5594c3cc
-2025-10-29 10:08:27.060 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger - Status: 404
-2025-10-29 10:08:27.060 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] INFO  c.u.logging.RequestResponseLogger -  Duration: 2ms
-2025-10-29 10:08:27.061 [19a2e5e0d3244d7a5594c3cc,] [http-nio-8085-exec-6] ERROR o.s.w.servlet.HandlerExecutionChain - HandlerInterceptor.afterCompletion threw exception
-java.lang.ClassCastException: class org.apache.catalina.connector.ResponseFacade cannot be cast to class org.springframework.web.util.ContentCachingResponseWrapper (org.apache.catalina.connector.ResponseFacade and org.springframework.web.util.ContentCachingResponseWrapper are in unnamed module of loader 'app')
-	at com.university.logging.RequestResponseLogger.afterCompletion(RequestResponseLogger.java:80) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.triggerAfterCompletion(HandlerExecutionChain.java:178) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.83.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.31.jar:5.3.31]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.83.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68) ~[spring-cloud-sleuth-instrumentation-3.1.9.jar:3.1.9]
-	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131) ~[spring-cloud-sleuth-autoconfigure-3.1.9.jar:3.1.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.31.jar:5.3.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:661) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:427) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:357) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:294) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:377) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:237) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:166) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:103) ~[spring-cloud-sleuth-instrumentation-3.1.9.jar:3.1.9]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.83.jar:9.0.83]
-	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-2025-10-29 10:08:30.093 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE REQUEST ===
-2025-10-29 10:08:30.093 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: 5a05674281d40fc5
-2025-10-29 10:08:30.093 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - URL: GET http://localhost:8085/api/attendance/course/3/date/2024-01-15
-2025-10-29 10:08:30.093 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Query: null
-2025-10-29 10:08:30.094 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Headers: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-US,en;q=0.9, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Microsoft Edge";v="141", "Not?A_Brand";v="8", "Chromium";v="141", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8085, upgrade-insecure-requests=1, connection=keep-alive, cache-control=max-age=0, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0, sec-fetch-dest=document}
-2025-10-29 10:08:30.094 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Request Body: [Empty Body]
-2025-10-29 10:08:30.094 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Start Time: 1761714510093
-2025-10-29 10:08:30.103 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === ATTENDANCE-SERVICE RESPONSE ===
-2025-10-29 10:08:30.103 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - TraceID: 5a05674281d40fc5
-2025-10-29 10:08:30.104 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Status: 200
-2025-10-29 10:08:30.104 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger -  Duration: 10ms
-2025-10-29 10:08:30.105 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - Response Body: [ {
-  "id" : 21,
-  "studentId" : 21,
-  "courseId" : 3,
-  "date" : "2024-01-15",
-  "status" : "PRESENT",
-  "semester" : null,
-  "remarks" : "Good",
-  "createdAt" : "2025-10-29T09:53:44",
-  "updatedAt" : "2025-10-29T09:53:44"
-} ]
-2025-10-29 10:08:30.105 [5a05674281d40fc5,5a05674281d40fc5] [http-nio-8085-exec-9] INFO  c.u.logging.RequestResponseLogger - === END ATTENDANCE-SERVICE ===
-2025-10-29 10:08:44.170 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:13:44.172 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:18:44.175 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:23:44.184 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:28:44.201 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:33:44.210 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:38:44.223 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:43:44.277 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:48:44.280 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:49:30.344 [,] [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
-2025-10-29 10:49:30.344 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1761716970344, current=DOWN, previous=UP]
-2025-10-29 10:49:30.345 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
-2025-10-29 10:49:30.363 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
-2025-10-29 10:49:30.640 [,] [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-29 10:49:30.693 [,] [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-10-29 10:49:30.709 [,] [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-10-29 10:49:30.717 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-10-29 10:49:33.726 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-10-29 10:49:33.773 [,] [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-11-04 09:41:27.912  INFO [attendance-service,,] 8684 --- [main] c.u.AttendanceServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:41:30.352  INFO [attendance-service,,] 8684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-04 09:41:30.755  INFO [attendance-service,,] 8684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 371 ms. Found 1 JPA repository interfaces.
+2025-11-04 09:41:31.767  INFO [attendance-service,,] 8684 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=748d84df-40fb-3e09-a40e-748a4a1e086b
+2025-11-04 09:41:33.656  INFO [attendance-service,,] 8684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-11-04 09:41:33.681  INFO [attendance-service,,] 8684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-04 09:41:33.682  INFO [attendance-service,,] 8684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-11-04 09:41:34.055  INFO [attendance-service,,] 8684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-04 09:41:34.056  INFO [attendance-service,,] 8684 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6092 ms
+2025-11-04 09:41:37.450  INFO [attendance-service,,] 8684 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-11-04 09:41:38.439  INFO [attendance-service,,] 8684 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-04 09:41:38.554  INFO [attendance-service,,] 8684 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-11-04 09:41:38.966  INFO [attendance-service,,] 8684 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-11-04 09:41:39.233  INFO [attendance-service,,] 8684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-04 09:41:39.854  INFO [attendance-service,,] 8684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-04 09:41:39.889  INFO [attendance-service,,] 8684 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2025-11-04 09:41:44.522  INFO [attendance-service,,] 8684 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-11-04 09:41:44.548  INFO [attendance-service,,] 8684 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04 09:41:45.838  WARN [attendance-service,,] 8684 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-04 09:41:49.634  INFO [attendance-service,,] 8684 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-11-04 09:41:49.743  INFO [attendance-service,,] 8684 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-04 09:41:50.316  WARN [attendance-service,,] 8684 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-04 09:41:50.660  INFO [attendance-service,,] 8684 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoint(s) beneath base path '/actuator'
+2025-11-04 09:41:50.850  INFO [attendance-service,,] 8684 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-04 09:41:50.947  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-04 09:41:50.958  INFO [attendance-service,,] 8684 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-04 09:41:51.016  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-04 09:41:51.017  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-04 09:41:51.017  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-04 09:41:51.017  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-04 09:41:51.017  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-04 09:41:51.018  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-04 09:41:51.018  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-04 09:41:51.532  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-04 09:41:51.538  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-04 09:41:51.544  INFO [attendance-service,,] 8684 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-04 09:41:51.554  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762231311552 with initial instances count: 3
+2025-11-04 09:41:51.579  INFO [attendance-service,,] 8684 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ATTENDANCE-SERVICE with eureka with status UP
+2025-11-04 09:41:51.580  INFO [attendance-service,,] 8684 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762231311580, current=UP, previous=STARTING]
+2025-11-04 09:41:51.583  INFO [attendance-service,,] 8684 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
+2025-11-04 09:41:51.679  INFO [attendance-service,,] 8684 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
+2025-11-04 09:41:51.689  INFO [attendance-service,,] 8684 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-attendance-service-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = attendance-service-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-11-04 09:41:51.911  INFO [attendance-service,,] 8684 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.2
+2025-11-04 09:41:51.912  INFO [attendance-service,,] 8684 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f8c67dc3ae0a3265
+2025-11-04 09:41:51.912  INFO [attendance-service,,] 8684 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1762231311908
+2025-11-04 09:41:51.955  INFO [attendance-service,,] 8684 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Subscribed to topic(s): attendance-topic
+2025-11-04 09:41:52.003  INFO [attendance-service,,] 8684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-11-04 09:41:52.005  INFO [attendance-service,,] 8684 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2025-11-04 09:41:52.814  WARN [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Error while fetching metadata with correlation id 2 : {attendance-topic=LEADER_NOT_AVAILABLE}
+2025-11-04 09:41:52.816  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Cluster ID: KjDbDlZjTga8d7ZlTY-I_A
+2025-11-04 09:41:52.819  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-11-04 09:41:52.823  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] (Re-)joining group
+2025-11-04 09:41:52.848  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Request joining group due to: need to re-join with the given member-id
+2025-11-04 09:41:52.849  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] (Re-)joining group
+2025-11-04 09:41:52.918  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting the last seen epoch of partition attendance-topic-0 to 0 since the associated topicId changed from null to ijS6TzhRTOG1Vji1kaW5Xw
+2025-11-04 09:41:53.460  INFO [attendance-service,,] 8684 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-11-04 09:41:53.636  INFO [attendance-service,,] 8684 --- [main] c.u.AttendanceServiceApplication         : Started AttendanceServiceApplication in 31.633 seconds (JVM running for 32.78)
+2025-11-04 09:41:55.866  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-attendance-service-group-1-7c4ccfbb-67c6-4626-a824-619671e474cd', protocol='range'}
+2025-11-04 09:41:55.872  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Finished assignment for group at generation 1: {consumer-attendance-service-group-1-7c4ccfbb-67c6-4626-a824-619671e474cd=Assignment(partitions=[attendance-topic-0])}
+2025-11-04 09:41:55.888  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-attendance-service-group-1-7c4ccfbb-67c6-4626-a824-619671e474cd', protocol='range'}
+2025-11-04 09:41:55.890  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Notifying assignor about the new Assignment(partitions=[attendance-topic-0])
+2025-11-04 09:41:55.897  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Adding newly assigned partitions: attendance-topic-0
+2025-11-04 09:41:55.927  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Found no committed offset for partition attendance-topic-0
+2025-11-04 09:41:55.946  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting offset for partition attendance-topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2025-11-04 09:41:55.950  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : attendance-service-group: partitions assigned: [attendance-topic-0]
+2025-11-04 09:46:51.040  INFO [attendance-service,,] 8684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-04 09:50:53.214  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Node -1 disconnected.
+2025-11-04 09:51:51.043  INFO [attendance-service,,] 8684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-04 09:56:43.002  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
+2025-11-04 09:56:43.003  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762232203003, current=DOWN, previous=UP]
+2025-11-04 09:56:43.004  INFO [attendance-service,,] 8684 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
+2025-11-04 09:56:43.038  INFO [attendance-service,,] 8684 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
+2025-11-04 09:56:43.123  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Revoke previously assigned partitions attendance-topic-0
+2025-11-04 09:56:43.125  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : attendance-service-group: partitions revoked: [attendance-topic-0]
+2025-11-04 09:56:43.128  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Member consumer-attendance-service-group-1-7c4ccfbb-67c6-4626-a824-619671e474cd sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2025-11-04 09:56:43.131  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting generation due to: consumer pro-actively leaving the group
+2025-11-04 09:56:43.132  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Request joining group due to: consumer pro-actively leaving the group
+2025-11-04 09:56:43.133  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Unsubscribed all topics or patterns and assigned partitions
+2025-11-04 09:56:43.137  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting generation due to: consumer pro-actively leaving the group
+2025-11-04 09:56:43.138  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Request joining group due to: consumer pro-actively leaving the group
+2025-11-04 09:56:43.179  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2025-11-04 09:56:43.181  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-04 09:56:43.183  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2025-11-04 09:56:43.209  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-attendance-service-group-1 unregistered
+2025-11-04 09:56:43.211  INFO [attendance-service,,] 8684 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : attendance-service-group: Consumer stopped
+2025-11-04 09:56:43.229  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04 09:56:43.241  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-04 09:56:43.272  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-04 09:56:43.280  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-04 09:56:46.296  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-04 09:56:46.309  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - deregister  status: 200
+2025-11-04 09:56:46.329  INFO [attendance-service,,] 8684 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-04 09:57:07.675  INFO [attendance-service,,] 11824 --- [main] c.u.AttendanceServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-11-04 09:57:10.645  INFO [attendance-service,,] 11824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-04 09:57:11.184  INFO [attendance-service,,] 11824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 490 ms. Found 1 JPA repository interfaces.
+2025-11-04 09:57:12.415  INFO [attendance-service,,] 11824 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=748d84df-40fb-3e09-a40e-748a4a1e086b
+2025-11-04 09:57:15.388  INFO [attendance-service,,] 11824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-11-04 09:57:15.415  INFO [attendance-service,,] 11824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-04 09:57:15.416  INFO [attendance-service,,] 11824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-11-04 09:57:16.146  INFO [attendance-service,,] 11824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-04 09:57:16.147  INFO [attendance-service,,] 11824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8425 ms
+2025-11-04 09:57:20.802  INFO [attendance-service,,] 11824 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-11-04 09:57:22.807  INFO [attendance-service,,] 11824 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-04 09:57:22.986  INFO [attendance-service,,] 11824 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-11-04 09:57:23.443  INFO [attendance-service,,] 11824 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-11-04 09:57:23.685  INFO [attendance-service,,] 11824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-04 09:57:24.410  INFO [attendance-service,,] 11824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-04 09:57:24.455  INFO [attendance-service,,] 11824 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2025-11-04 09:57:30.947  INFO [attendance-service,,] 11824 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-11-04 09:57:30.989  INFO [attendance-service,,] 11824 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04 09:57:33.864  WARN [attendance-service,,] 11824 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-04 09:57:40.089  INFO [attendance-service,,] 11824 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-11-04 09:57:40.225  INFO [attendance-service,,] 11824 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-04 09:57:41.893  WARN [attendance-service,,] 11824 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-04 09:57:42.560  INFO [attendance-service,,] 11824 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoint(s) beneath base path '/actuator'
+2025-11-04 09:57:42.980  INFO [attendance-service,,] 11824 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-04 09:57:43.146  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-04 09:57:43.159  INFO [attendance-service,,] 11824 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-04 09:57:43.240  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-04 09:57:43.241  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-04 09:57:43.241  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-04 09:57:43.241  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-04 09:57:43.241  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-04 09:57:43.242  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-04 09:57:43.242  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-04 09:57:44.064  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-04 09:57:44.074  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-04 09:57:44.080  INFO [attendance-service,,] 11824 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-04 09:57:44.091  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762232264089 with initial instances count: 3
+2025-11-04 09:57:44.120  INFO [attendance-service,,] 11824 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ATTENDANCE-SERVICE with eureka with status UP
+2025-11-04 09:57:44.121  INFO [attendance-service,,] 11824 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762232264121, current=UP, previous=STARTING]
+2025-11-04 09:57:44.125  INFO [attendance-service,,] 11824 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
+2025-11-04 09:57:44.270  INFO [attendance-service,,] 11824 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-attendance-service-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = attendance-service-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-11-04 09:57:44.287  INFO [attendance-service,,] 11824 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
+2025-11-04 09:57:44.513  INFO [attendance-service,,] 11824 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.2
+2025-11-04 09:57:44.513  INFO [attendance-service,,] 11824 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f8c67dc3ae0a3265
+2025-11-04 09:57:44.514  INFO [attendance-service,,] 11824 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1762232264504
+2025-11-04 09:57:44.602  INFO [attendance-service,,] 11824 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Subscribed to topic(s): attendance-topic
+2025-11-04 09:57:44.931  INFO [attendance-service,,] 11824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-11-04 09:57:44.934  INFO [attendance-service,,] 11824 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2025-11-04 09:57:46.005  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting the last seen epoch of partition attendance-topic-0 to 0 since the associated topicId changed from null to ijS6TzhRTOG1Vji1kaW5Xw
+2025-11-04 09:57:46.010  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Cluster ID: KjDbDlZjTga8d7ZlTY-I_A
+2025-11-04 09:57:46.012  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-11-04 09:57:46.016  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] (Re-)joining group
+2025-11-04 09:57:46.037  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Request joining group due to: need to re-join with the given member-id
+2025-11-04 09:57:46.038  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] (Re-)joining group
+2025-11-04 09:57:46.735  INFO [attendance-service,,] 11824 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-11-04 09:57:46.927  INFO [attendance-service,,] 11824 --- [main] c.u.AttendanceServiceApplication         : Started AttendanceServiceApplication in 45.496 seconds (JVM running for 46.776)
+2025-11-04 09:57:49.052  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-attendance-service-group-1-6e4bf3f9-d138-4bc1-9f6e-cd5cd0746fc4', protocol='range'}
+2025-11-04 09:57:49.055  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Finished assignment for group at generation 3: {consumer-attendance-service-group-1-6e4bf3f9-d138-4bc1-9f6e-cd5cd0746fc4=Assignment(partitions=[attendance-topic-0])}
+2025-11-04 09:57:49.075  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-attendance-service-group-1-6e4bf3f9-d138-4bc1-9f6e-cd5cd0746fc4', protocol='range'}
+2025-11-04 09:57:49.076  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Notifying assignor about the new Assignment(partitions=[attendance-topic-0])
+2025-11-04 09:57:49.080  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Adding newly assigned partitions: attendance-topic-0
+2025-11-04 09:57:49.096  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Found no committed offset for partition attendance-topic-0
+2025-11-04 09:57:49.113  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting offset for partition attendance-topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2025-11-04 09:57:49.115  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : attendance-service-group: partitions assigned: [attendance-topic-0]
+2025-11-04 09:58:39.358  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
+2025-11-04 09:58:39.358  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762232319358, current=DOWN, previous=UP]
+2025-11-04 09:58:39.359  INFO [attendance-service,,] 11824 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
+2025-11-04 09:58:39.374  INFO [attendance-service,,] 11824 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
+2025-11-04 09:58:39.538  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Revoke previously assigned partitions attendance-topic-0
+2025-11-04 09:58:39.539  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : attendance-service-group: partitions revoked: [attendance-topic-0]
+2025-11-04 09:58:39.541  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Member consumer-attendance-service-group-1-6e4bf3f9-d138-4bc1-9f6e-cd5cd0746fc4 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2025-11-04 09:58:39.543  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting generation due to: consumer pro-actively leaving the group
+2025-11-04 09:58:39.543  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Request joining group due to: consumer pro-actively leaving the group
+2025-11-04 09:58:39.544  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Unsubscribed all topics or patterns and assigned partitions
+2025-11-04 09:58:39.550  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Resetting generation due to: consumer pro-actively leaving the group
+2025-11-04 09:58:39.551  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-attendance-service-group-1, groupId=attendance-service-group] Request joining group due to: consumer pro-actively leaving the group
+2025-11-04 09:58:39.558  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2025-11-04 09:58:39.559  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-04 09:58:39.559  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2025-11-04 09:58:39.572  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-attendance-service-group-1 unregistered
+2025-11-04 09:58:39.574  INFO [attendance-service,,] 11824 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : attendance-service-group: Consumer stopped
+2025-11-04 09:58:39.623  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04 09:58:39.640  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-04 09:58:39.942  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-04 09:58:39.949  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-04 09:58:42.953  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-04 09:58:42.965  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/service-discovery/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/service-discovery/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/service-discovery/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -803,8 +428,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 52 more
 
-2025-10-29 10:49:33.774 [,] [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2025-10-29 10:49:33.802 [,] [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-11-04 09:58:42.965  WARN [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/service-discovery/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-11-04 09:58:42.974  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/service-discovery/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/service-discovery/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/service-discovery/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
@@ -873,8 +498,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
 	... 53 more
 
-2025-10-29 10:49:33.803 [,] [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2025-10-29 10:49:33.809 [,] [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - de-registration failedCannot execute request on any known server
+2025-11-04 09:58:42.975  WARN [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/service-discovery/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2025-11-04 09:58:42.983 ERROR [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - de-registration failedCannot execute request on any known server
+
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
@@ -908,238 +534,5 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.18.jar:2.7.18]
 	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-2025-10-29 10:49:33.824 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2025-10-29 10:57:30.452 [,] [main] INFO  c.u.AttendanceServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-10-29 10:57:32.402 [,] [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-29 10:57:32.876 [,] [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 445 ms. Found 1 JPA repository interfaces.
-2025-10-29 10:57:34.280 [,] [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=732ec2f0-4d3b-3120-8032-1f1681bf26ba
-2025-10-29 10:57:36.890 [,] [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
-2025-10-29 10:57:36.942 [,] [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-10-29 10:57:36.943 [,] [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-10-29 10:57:37.587 [,] [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-10-29 10:57:37.588 [,] [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7093 ms
-2025-10-29 10:57:39.662 [,] [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-29 10:57:39.832 [,] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
-2025-10-29 10:57:40.352 [,] [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2025-10-29 10:57:40.674 [,] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-10-29 10:57:41.653 [,] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-10-29 10:57:41.698 [,] [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
-2025-10-29 10:57:43.932 [,] [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2025-10-29 10:57:43.954 [,] [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-29 10:57:45.833 [,] [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-29 10:57:49.961 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2025-10-29 10:57:50.077 [,] [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-10-29 10:57:51.411 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2025-10-29 10:57:52.037 [,] [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-10-29 10:57:52.438 [,] [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-10-29 10:57:52.575 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-10-29 10:57:52.588 [,] [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 10:57:52.666 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-10-29 10:57:52.667 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-10-29 10:57:52.667 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-10-29 10:57:52.667 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-10-29 10:57:52.668 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-10-29 10:57:52.668 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-10-29 10:57:52.668 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-10-29 10:57:53.357 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-10-29 10:57:53.361 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-10-29 10:57:53.366 [,] [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-10-29 10:57:53.373 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1761717473372 with initial instances count: 4
-2025-10-29 10:57:53.392 [,] [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application ATTENDANCE-SERVICE with eureka with status UP
-2025-10-29 10:57:53.393 [,] [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1761717473393, current=UP, previous=STARTING]
-2025-10-29 10:57:53.414 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
-2025-10-29 10:57:53.441 [,] [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
-2025-10-29 10:57:53.444 [,] [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8085
-2025-10-29 10:57:53.486 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
-2025-10-29 10:57:55.103 [,] [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2025-10-29 10:57:55.168 [,] [main] INFO  c.u.AttendanceServiceApplication - Started AttendanceServiceApplication in 30.879 seconds (JVM running for 33.145)
-2025-10-29 11:02:52.676 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:07:52.688 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:12:52.691 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:17:52.693 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:22:52.697 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:27:52.706 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:32:52.710 [,] [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-10-29 11:34:15.271 [,] [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
-2025-10-29 11:34:15.272 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1761719655272, current=DOWN, previous=UP]
-2025-10-29 11:34:15.272 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085: registering service...
-2025-10-29 11:34:15.293 [,] [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - registration status: 204
-2025-10-29 11:34:15.395 [,] [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-29 11:34:15.398 [,] [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-10-29 11:34:15.453 [,] [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-10-29 11:34:15.456 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-10-29 11:34:18.458 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-10-29 11:34:18.463 [,] [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
-	... 39 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 52 more
 
-2025-10-29 11:34:18.464 [,] [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2025-10-29 11:34:18.468 [,] [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
-	... 40 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:579)
-	at java.base/sun.nio.ch.Net.connect(Net.java:568)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 53 more
-
-2025-10-29 11:34:18.469 [,] [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ATTENDANCE-SERVICE/localhost:attendance-service:8085": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2025-10-29 11:34:18.472 [,] [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_ATTENDANCE-SERVICE/localhost:attendance-service:8085 - de-registration failedCannot execute request on any known server
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) ~[eureka-client-1.10.17.jar:1.10.17]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) ~[spring-cloud-context-3.1.7.jar:3.1.7]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-3.1.7.jar:3.1.7]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-5.3.31.jar:5.3.31]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1120) ~[spring-context-5.3.31.jar:5.3.31]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1086) ~[spring-context-5.3.31.jar:5.3.31]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-2.7.18.jar:2.7.18]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1032) ~[spring-context-5.3.31.jar:5.3.31]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-2.7.18.jar:2.7.18]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-2.7.18.jar:2.7.18]
-	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-2025-10-29 11:34:18.477 [,] [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-11-04 09:58:42.993  INFO [attendance-service,,] 11824 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

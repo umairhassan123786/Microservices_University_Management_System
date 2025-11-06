@@ -1,10 +1,10 @@
 server:
   port: 8761
-
+  servlet:
+    context-path: /service-discovery
 spring:
   application:
     name: service-discovery
-  # Kyunki ye khud config server hai
   cloud:
     config:
       server:
@@ -15,7 +15,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone:  http://localhost:8761
   instance:
     hostname: localhost
 

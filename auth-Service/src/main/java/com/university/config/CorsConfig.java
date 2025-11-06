@@ -1,5 +1,4 @@
 //package com.university.config;
-//
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.web.cors.CorsConfiguration;
@@ -15,9 +14,10 @@
 //        CorsConfiguration corsConfiguration = new CorsConfiguration();
 //        corsConfiguration.setAllowCredentials(true);
 //        corsConfiguration.setAllowedOrigins(Arrays.asList(
-//                "http://localhost:3000",  // React frontend
-//                "http://localhost:4200",  // Angular frontend
-//                "http://localhost:8080"   // API Gateway
+//                "http://localhost:3000",
+//                "http://localhost:4200",
+//                "http://localhost:8081",
+//                "http://localhost:8080"
 //        ));
 //        corsConfiguration.setAllowedHeaders(Arrays.asList(
 //                "Origin", "Access-Control-Allow-Origin", "Content-Type",
@@ -34,7 +34,6 @@
 //
 //        UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 //        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
-//
 //        return new CorsFilter(urlBasedCorsConfigurationSource);
 //    }
 //}

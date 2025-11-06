@@ -1,5 +1,4 @@
 package com.university.filter;
-
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -8,14 +7,13 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 import java.util.Collections;
 import java.util.Map;
 
-@Component
+//@Component
 public class RoleBasedAuthFilter implements GlobalFilter, Ordered {
 
     private final WebClient webClient;
@@ -31,7 +29,6 @@ public class RoleBasedAuthFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest();
         String path = request.getPath().toString();
 
-        // Skip auth for public endpoints
         if (isPublicEndpoint(path)) {
             return chain.filter(exchange);
         }
@@ -44,7 +41,6 @@ public class RoleBasedAuthFilter implements GlobalFilter, Ordered {
 
         String token = authHeader.substring(7);
 
-        // Validate token using WebClient
         return webClient.post()
                 .uri("/api/auth/validate")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -63,12 +59,10 @@ public class RoleBasedAuthFilter implements GlobalFilter, Ordered {
                     Object userIdObj = response.get("userId");
                     Long userId = userIdObj != null ? Long.valueOf(userIdObj.toString()) : null;
 
-                    // Check role-based access
                     if (!hasAccess(role, path, userId, username)) {
                         return forbidden(exchange, "Insufficient permissions");
                     }
 
-                    // Add user info to headers
                     ServerHttpRequest modifiedRequest = request.mutate()
                             .header("X-User-Id", userId != null ? userId.toString() : "")
                             .header("X-User-Role", role != null ? role : "")
@@ -98,8 +92,6 @@ public class RoleBasedAuthFilter implements GlobalFilter, Ordered {
 
     private boolean hasAccess(String role, String path, Long userId, String username) {
         if (role == null) return false;
-
-        // Student access - only their own data
         if ("STUDENT".equals(role)) {
             if (path.startsWith("/api/students/") && path.matches("/api/students/\\d+.*")) {
                 Long studentIdFromPath = extractIdFromPath(path, "students");
@@ -108,14 +100,12 @@ public class RoleBasedAuthFilter implements GlobalFilter, Ordered {
             return path.startsWith("/api/students/");
         }
 
-        // Teacher access
         if ("TEACHER".equals(role)) {
             return path.startsWith("/api/teachers/") ||
                     path.startsWith("/api/courses/") ||
                     path.startsWith("/api/attendance/");
         }
 
-        // Admin access - everything
         if ("ADMIN".equals(role)) {
             return true;
         }

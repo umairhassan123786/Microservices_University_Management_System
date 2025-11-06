@@ -9,7 +9,8 @@ import java.util.Map;
 @FeignClient(
         name = "teacher-service",
         url = "http://localhost:8090",
-        path = "/api/teachers"
+        path = "/api/teachers",
+        fallback = TeacherServiceFallback.class
 )
 public interface TeacherServiceClient {
 

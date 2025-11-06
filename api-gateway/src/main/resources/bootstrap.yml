@@ -6,4 +6,6 @@ spring:
       uri: http://localhost:8888
       fail-fast: false
     main:
-        allow-circular-references: true
+      allow-circular-references: true
+server:
+  port: 8070

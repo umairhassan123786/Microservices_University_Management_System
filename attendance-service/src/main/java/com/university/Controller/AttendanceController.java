@@ -17,7 +17,6 @@ import java.util.Map;
 public class AttendanceController {
     private final AttendanceService attendanceService;
 
-    // Existing endpoints
     @PostMapping("/mark")
     public ResponseEntity<?> markAttendance(@RequestBody Attendance attendance) {
         try {

@@ -20,6 +20,7 @@ public class StudentController {
     private StudentService studentService;
     @Autowired
     private StudentRepository studentRepository;
+
     @GetMapping("/{studentId}/courses")
     public ResponseEntity<List<CourseDTO>> getStudentCourses(@PathVariable Long studentId) {
         try {
@@ -29,6 +30,7 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
+
     @GetMapping("/{studentId}/attendance")
     public ResponseEntity<List<AttendanceDTO>> getStudentAttendance(@PathVariable Long studentId) {
         try {
@@ -38,6 +40,7 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
+
     @GetMapping("/{studentId}/attendance/course/{courseId}")
     public ResponseEntity<List<AttendanceDTO>> getCourseAttendance(
             @PathVariable Long studentId,
@@ -59,6 +62,7 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
     }
+
     @GetMapping
     public ResponseEntity<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
@@ -105,6 +109,7 @@ public class StudentController {
         boolean exists = studentService.existsByRollNumber(rollNumber);
         return ResponseEntity.ok(exists);
     }
+
     @GetMapping("/exists/{studentId}")
     public Boolean existsById(@PathVariable Long studentId) {
         try {
@@ -127,6 +132,7 @@ public class StudentController {
             return ResponseEntity.notFound().build();
         }
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student student) {
         try {

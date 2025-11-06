@@ -1,5 +1,6 @@
 package com.university.client;
 import com.university.DTO.AttendanceDTO;
+import com.university.config.FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import java.util.List;
 @FeignClient(
         name = "attendance-service",
         path = "/api/attendance",
+        configuration = FeignConfig.class,
         fallback = AttendanceServiceFallback.class
 )
 public interface AttendanceServiceClient {

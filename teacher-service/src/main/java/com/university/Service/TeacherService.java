@@ -1,4 +1,5 @@
 package com.university.Service;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.university.DTO.CourseDTO;
 import com.university.DTO.MarkAttendanceRequest;
 import com.university.Entities.Attendance;
@@ -8,6 +9,7 @@ import com.university.Repository.TeacherRepository;
 import com.university.client.AttendanceServiceClient;
 import com.university.client.CourseServiceClient;
 import com.university.client.StudentServiceClient;
+import com.university.kafka.AttendanceProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +28,8 @@ public class TeacherService {
 
     @Autowired
     private StudentServiceClient studentServiceClient;
-
+    @Autowired
+    private AttendanceProducer attendanceProducer;
     @Autowired
     private AttendanceServiceClient attendanceServiceClient;
     public List<Teacher> getAllTeachers() {
@@ -143,11 +146,135 @@ public class TeacherService {
         }
     }
 
+//    public Map<String, Object> markAttendanceByTeacher(Long teacherId, Long courseId, MarkAttendanceRequest request) {
+//        try {
+//            System.out.println("Marking attendance - Teacher: " + teacherId + ", Course: " + courseId + ", Student: " + request.getStudentId());
+//
+//            // Step 1: Validate teacher has access to this course
+//            List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
+//            System.out.println("Teacher courses: " + teacherCourses);
+//
+//            boolean hasAccess = teacherCourses.stream()
+//                    .anyMatch(course -> {
+//                        Object courseIdObj = course.get("id");
+//                        System.out.println("Comparing course ID: " + courseIdObj + " with: " + courseId);
+//                        return courseId != null && courseId.equals(courseIdObj);
+//                    });
+//
+//            if (!hasAccess) {
+//                throw new RuntimeException("Teacher with ID " + teacherId + " does not have access to course ID " + courseId);
+//            }
+//            System.out.println("Teacher course access validated");
+//
+//            // Step 2: Validate student is enrolled in the course
+//            List<Map<String, Object>> enrolledStudents = getStudentsInCourse(teacherId, courseId);
+//            System.out.println("Enrolled students: " + enrolledStudents);
+//
+//            boolean isEnrolled = enrolledStudents.stream()
+//                    .anyMatch(student -> {
+//                        if (student == null) {
+//                            System.out.println("Found null student in enrolled list");
+//                            return false;
+//                        }
+//                        Object studentIdObj = student.get("id");
+//                        System.out.println("Comparing student ID: " + studentIdObj + " with: " + request.getStudentId());
+//                        return studentIdObj != null && request.getStudentId().equals(Long.valueOf(studentIdObj.toString()));
+//                    });
+//
+//            if (!isEnrolled) {
+//                throw new RuntimeException("Student with ID " + request.getStudentId() + " is not enrolled in course ID " + courseId);
+//            }
+//            System.out.println("Student enrollment validated");
+//
+//            // Step 3: Create and save attendance
+//            Attendance attendance = new Attendance();
+//            attendance.setStudentId(request.getStudentId());
+//            attendance.setCourseId(courseId);
+//            attendance.setStatus(AttendanceStatus.valueOf(request.getStatus()));
+//            attendance.setDate(request.getDate());
+//            attendance.setRemarks(request.getRemarks()); // ✅ Add remarks
+//            attendance.setCreatedAt(LocalDate.now().atStartOfDay());
+//            attendance.setUpdatedAt(LocalDate.now().atStartOfDay());
+//
+//            System.out.println("Sending attendance to service: " + attendance);
+//
+//            // Step 4: Call attendance service
+//            Attendance savedAttendance = attendanceServiceClient.markAttendance(attendance);
+//
+//            System.out.println("Attendance saved: " + savedAttendance);
+//
+//            // Step 5: Return success response
+//            Map<String, Object> result = new HashMap<>();
+//            result.put("message", "Attendance marked successfully");
+//            result.put("attendanceId", savedAttendance.getId());
+//            result.put("studentId", savedAttendance.getStudentId());
+//            result.put("courseId", savedAttendance.getCourseId());
+//            result.put("status", savedAttendance.getStatus().toString());
+//            result.put("date", savedAttendance.getDate());
+//            result.put("remarks", savedAttendance.getRemarks());
+//            result.put("teacherId", teacherId);
+//
+//            System.out.println("Returning result: " + result);
+//            return result;
+//
+//        } catch (Exception e) {
+//            System.err.println("Error in markAttendanceByTeacher: " + e.getMessage());
+//            e.printStackTrace();
+//            throw new RuntimeException("Failed to mark attendance: " + e.getMessage());
+//        }
+//    }
+//    public Map<String, Object> markAttendanceByTeacher(Long teacherId, Long courseId, MarkAttendanceRequest request) {
+//        try {
+//            System.out.println("Marking attendance - Teacher: " + teacherId + ", Course: " + courseId + ", Student: " + request.getStudentId());
+//            List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
+//            System.out.println("Teacher courses: " + teacherCourses);
+//             boolean hasAccess = teacherCourses.stream()
+//                    .anyMatch(course -> {
+//                        Object courseIdObj = course.get("id");
+//                     System.out.println("Comparing course ID: " + courseIdObj + " with: " + courseId);
+//                     return courseIdObj != null && courseId.equals(courseIdObj);
+//                    });
+//         if (!hasAccess) {
+//                throw new RuntimeException("Teacher with ID " + teacherId + " does not have access to course ID " + courseId);
+//            }
+//            List<Map<String, Object>> enrolledStudents = getStudentsInCourse(teacherId, courseId);
+//             boolean isEnrolled = enrolledStudents.stream()
+//                    .anyMatch(student -> {
+//                        if (student == null) return false;
+//                        Object studentIdObj = student.get("id");
+//                     return studentIdObj != null && request.getStudentId().equals(Long.valueOf(studentIdObj.toString()));
+//                 });
+//
+//            if (!isEnrolled) {
+//                throw new RuntimeException("Student with ID " + request.getStudentId() + " is not enrolled in course ID " + courseId);
+//            }
+//            Map<String, Object> attendanceEvent = new HashMap<>();
+//            attendanceEvent.put("studentId", request.getStudentId());
+//            attendanceEvent.put("courseId", courseId);
+//            attendanceEvent.put("status", request.getStatus());
+//            attendanceEvent.put("date", request.getDate().toString());
+//            attendanceEvent.put("remarks", request.getRemarks());
+//            attendanceEvent.put("teacherId", teacherId);
+//            attendanceProducer.sendAttendanceEvent(attendanceEvent);
+//            Map<String, Object> result = new HashMap<>();
+//            result.put("message", "Attendance event sent to Kafka successfully");
+//            result.put("teacherId", teacherId);
+//            result.put("studentId", request.getStudentId());
+//            result.put("courseId", courseId);
+//            result.put("status", request.getStatus());
+//            result.put("date", request.getDate());
+//            result.put("remarks", request.getRemarks());
+//            return result;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new RuntimeException("Failed to mark attendance: " + e.getMessage());
+//        }
+//    }
+
     public Map<String, Object> markAttendanceByTeacher(Long teacherId, Long courseId, MarkAttendanceRequest request) {
         try {
             System.out.println("Marking attendance - Teacher: " + teacherId + ", Course: " + courseId + ", Student: " + request.getStudentId());
 
-            // Step 1: Validate teacher has access to this course
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
             System.out.println("Teacher courses: " + teacherCourses);
 
@@ -155,71 +282,61 @@ public class TeacherService {
                     .anyMatch(course -> {
                         Object courseIdObj = course.get("id");
                         System.out.println("Comparing course ID: " + courseIdObj + " with: " + courseId);
-                        return courseId != null && courseId.equals(courseIdObj);
+                        return courseIdObj != null && courseId.equals(courseIdObj);
                     });
 
             if (!hasAccess) {
                 throw new RuntimeException("Teacher with ID " + teacherId + " does not have access to course ID " + courseId);
             }
-            System.out.println("Teacher course access validated");
 
-            // Step 2: Validate student is enrolled in the course
             List<Map<String, Object>> enrolledStudents = getStudentsInCourse(teacherId, courseId);
-            System.out.println("Enrolled students: " + enrolledStudents);
-
             boolean isEnrolled = enrolledStudents.stream()
                     .anyMatch(student -> {
-                        if (student == null) {
-                            System.out.println("Found null student in enrolled list");
-                            return false;
-                        }
+                        if (student == null) return false;
                         Object studentIdObj = student.get("id");
-                        System.out.println("Comparing student ID: " + studentIdObj + " with: " + request.getStudentId());
                         return studentIdObj != null && request.getStudentId().equals(Long.valueOf(studentIdObj.toString()));
                     });
 
             if (!isEnrolled) {
                 throw new RuntimeException("Student with ID " + request.getStudentId() + " is not enrolled in course ID " + courseId);
             }
-            System.out.println("Student enrollment validated");
 
-            // Step 3: Create and save attendance
-            Attendance attendance = new Attendance();
-            attendance.setStudentId(request.getStudentId());
-            attendance.setCourseId(courseId);
-            attendance.setStatus(AttendanceStatus.valueOf(request.getStatus()));
-            attendance.setDate(request.getDate());
-            attendance.setRemarks(request.getRemarks()); // ✅ Add remarks
-            attendance.setCreatedAt(LocalDate.now().atStartOfDay());
-            attendance.setUpdatedAt(LocalDate.now().atStartOfDay());
+            // Create attendance data Map
+            Map<String, Object> attendanceEvent = new HashMap<>();
+            attendanceEvent.put("studentId", request.getStudentId());
+            attendanceEvent.put("courseId", courseId);
+            attendanceEvent.put("status", request.getStatus());
+            attendanceEvent.put("date", request.getDate().toString());
+            attendanceEvent.put("remarks", request.getRemarks());
+            attendanceEvent.put("teacherId", teacherId);
 
-            System.out.println("Sending attendance to service: " + attendance);
+            // Convert Map to JSON String
+            ObjectMapper objectMapper = new ObjectMapper();
+            String attendanceJson = objectMapper.writeValueAsString(attendanceEvent);
+            System.out.println("Converted to JSON: " + attendanceJson);
 
-            // Step 4: Call attendance service
-            Attendance savedAttendance = attendanceServiceClient.markAttendance(attendance);
+            // Send JSON string to Kafka
+            attendanceProducer.sendAttendanceEvent(attendanceJson);
 
-            System.out.println("Attendance saved: " + savedAttendance);
-
-            // Step 5: Return success response
+            // Return response
             Map<String, Object> result = new HashMap<>();
-            result.put("message", "Attendance marked successfully");
-            result.put("attendanceId", savedAttendance.getId());
-            result.put("studentId", savedAttendance.getStudentId());
-            result.put("courseId", savedAttendance.getCourseId());
-            result.put("status", savedAttendance.getStatus().toString());
-            result.put("date", savedAttendance.getDate());
-            result.put("remarks", savedAttendance.getRemarks());
+            result.put("message", "Attendance event sent to Kafka successfully");
             result.put("teacherId", teacherId);
+            result.put("studentId", request.getStudentId());
+            result.put("courseId", courseId);
+            result.put("status", request.getStatus());
+            result.put("date", request.getDate());
+            result.put("remarks", request.getRemarks());
+            result.put("jsonSent", attendanceJson); // Optional: for debugging
 
-            System.out.println("Returning result: " + result);
             return result;
 
         } catch (Exception e) {
-            System.err.println("Error in markAttendanceByTeacher: " + e.getMessage());
             e.printStackTrace();
             throw new RuntimeException("Failed to mark attendance: " + e.getMessage());
         }
-    }    public Map<String, Object> bulkMarkAttendance(Long teacherId, Map<String, Object> request) {
+    }
+    public Map<String, Object> bulkMarkAttendance(Long teacherId, Map<String, Object> request) {
         try {
             Long courseId = Long.valueOf(request.get("courseId").toString());
             String dateStr = request.get("date").toString();

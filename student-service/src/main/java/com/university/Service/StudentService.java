@@ -55,7 +55,6 @@ public class StudentService {
                     })
                     .collect(Collectors.toList());
 
-            // Teacher names add karein
             for (CourseDTO course : courses) {
                 if (course.getTeacherId() != null) {
                     try {

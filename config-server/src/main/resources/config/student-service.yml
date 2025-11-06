@@ -12,14 +12,26 @@ spring:
   cloud:
     config:
       enabled: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+        group-id: university-group
+        auto-offset-reset: earliest
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
 
 server:
   port: 8083
-
+  servlet:
+    context-path: /
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/service-discovery/eureka/
 
 resilience4j:
   circuitbreaker:
@@ -28,6 +40,15 @@ resilience4j:
         failure-rate-threshold: 50
         wait-duration-in-open-state: 5000
         sliding-window-size: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,circuitbreakers,circuitbreakerevents
+  endpoint:
+    health:
+      show-details: always
 
 feign:
   circuitbreaker:
@@ -42,6 +63,10 @@ feign:
 
 logging:
   level:
-    com.university: DEBUG
-    org.springframework.cloud.openfeign: DEBUG
-    feign: DEBUG
+    com.university: INFO
+    org.springframework.kafka: DEBUG
+  file:
+    name: logs/student-service.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{traceId:-},%X{spanId:-}] [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{traceId:-},%X{spanId:-}] [%thread] %-5level %logger{36} - %msg%n"

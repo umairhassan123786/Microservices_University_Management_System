@@ -11,7 +11,8 @@ import java.util.Map;
 @FeignClient(
         name = "student-service",
         path = "/api/students",
-        configuration = FeignConfig.class
+        configuration = FeignConfig.class,
+        fallback = StudentServiceClientFallback.class
 )
 public interface StudentServiceClient {
 
@@ -20,4 +21,7 @@ public interface StudentServiceClient {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     Map<String, Object> createStudent(@RequestBody Map<String, Object> studentData);
+
+    @GetMapping("/user/{userId}")
+    Map<String, Object> getStudentByUserId(@PathVariable("userId") Long userId);
 }

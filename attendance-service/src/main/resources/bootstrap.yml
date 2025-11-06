@@ -4,4 +4,6 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-      fail-fast: false
+      fail-fast: true
+    main:
+      allow-circular-references: true

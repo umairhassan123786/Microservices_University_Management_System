@@ -11,14 +11,33 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.Oracle12cDialect
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+        group-id: attendance-service-group
+        auto-offset-reset: earliest
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,circuitbreakers,circuitbreakerevents
+  endpoint:
+    health:
+      show-details: always
 server:
   port: 8085
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/service-discovery/eureka/
 
 logging:
   level:
