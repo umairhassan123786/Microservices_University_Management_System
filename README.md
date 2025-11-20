@@ -71,9 +71,9 @@ mvn spring-boot:run
 - Service Discovery: http://localhost:8761
 - API Gateway: http://localhost:8080
 - Auth Service: http://localhost:8081
-- Student Service: http://localhost:8082
-- Course Service: http://localhost:8083
-- Teacher Service: http://localhost:8084
+- Student Service: http://localhost:8083
+- Course Service: http://localhost:8084
+- Teacher Service: http://localhost:8090
 - Attendance Service: http://localhost:8085
 
 ## Centralized Logging (ELK Stack)
