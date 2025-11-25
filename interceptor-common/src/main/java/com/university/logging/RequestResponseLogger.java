@@ -1,4 +1,5 @@
 package com.university.logging;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 import org.springframework.web.util.ContentCachingResponseWrapper;
+
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,13 +37,7 @@ public class RequestResponseLogger implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (!(request instanceof ContentCachingRequestWrapper)) {
-            request = new ContentCachingRequestWrapper((HttpServletRequest) request);
-        }
-        if (!(response instanceof ContentCachingResponseWrapper)) {
-            response = new ContentCachingResponseWrapper((HttpServletResponse) response);
-        }
-
+        // Don't wrap here - let the filter handle wrapping
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime", startTime);
 
@@ -51,13 +47,21 @@ public class RequestResponseLogger implements HandlerInterceptor {
             MDC.put("traceId", traceId);
         }
 
+        // Log basic request info without casting
         logger.info("=== {} REQUEST ===", serviceName);
         logger.info("TraceID: {}", traceId);
         logger.info("URL: {} {}", request.getMethod(), getRequestURL(request));
         logger.info("Query: {}", request.getQueryString());
         logger.info("Headers: {}", getHeaders(request));
-        logger.info("Request Body: {}", getRequestBody((ContentCachingRequestWrapper) request));
+        logger.info("Content Type: {}", request.getContentType());
         logger.info("Start Time: {}", startTime);
+
+        // Only log request body if it's a wrapped request
+        if (request instanceof ContentCachingRequestWrapper) {
+            logger.info("Request Body: {}", getRequestBody((ContentCachingRequestWrapper) request));
+        } else {
+            logger.info("Request Body: [Not Available - Request not wrapped]");
+        }
 
         return true;
     }
@@ -76,21 +80,25 @@ public class RequestResponseLogger implements HandlerInterceptor {
         logger.info("=== {} RESPONSE ===", serviceName);
         logger.info("TraceID: {}", traceId);
         logger.info("Status: {}", response.getStatus());
-        logger.info(" Duration: {}ms", duration);
-        logger.info("Response Body: {}", getResponseBody((ContentCachingResponseWrapper) response));
+        logger.info("Duration: {}ms", duration);
+
+        // FIX: Check if response is wrapped before casting
+        if (response instanceof ContentCachingResponseWrapper) {
+            logger.info("Response Body: {}", getResponseBody((ContentCachingResponseWrapper) response));
+            try {
+                ((ContentCachingResponseWrapper) response).copyBodyToResponse();
+            } catch (Exception e) {
+                logger.warn("Failed to copy response body: {}", e.getMessage());
+            }
+        } else {
+            logger.info("Response Body: [Not Available - Response not wrapped]");
+        }
 
         if (ex != null) {
             logger.error("Exception: {}", ex.getMessage(), ex);
         }
 
         logger.info("=== END {} ===", serviceName);
-        if (response instanceof ContentCachingResponseWrapper) {
-            try {
-                ((ContentCachingResponseWrapper) response).copyBodyToResponse();
-            } catch (Exception e) {
-                logger.warn("Failed to copy response body: {}", e.getMessage());
-            }
-        }
         MDC.clear();
     }
 

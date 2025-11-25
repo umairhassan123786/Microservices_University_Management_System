@@ -33,8 +33,6 @@ public class CourseServiceFallback implements CourseServiceClient {
     @Override
     public List<Map<String, Object>> getCourseStudentDetails(Long courseId) {
         System.out.println("Course service down - Returning empty student details for course: " + courseId);
-
-        // Return meaningful error response
         Map<String, Object> errorStudent = new HashMap<>();
         errorStudent.put("id", -1L);
         errorStudent.put("name", "Student Data Unavailable");

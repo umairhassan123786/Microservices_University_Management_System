@@ -6,10 +6,10 @@ import lombok.Data;
 public class CourseDTO {
     private Long id;
 
-    @JsonProperty("courseName")  // JSON mein "courseName" ko "name" map karega
+    @JsonProperty("courseName")
     private String name;
 
-    @JsonProperty("courseCode")  // JSON mein "courseCode" ko "code" map karega
+    @JsonProperty("courseCode")
     private String code;
     private Integer credits;
     private String department;

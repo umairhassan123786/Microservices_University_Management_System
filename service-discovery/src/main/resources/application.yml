@@ -18,5 +18,3 @@ eureka:
       defaultZone:  http://localhost:8761
   instance:
     hostname: localhost
-
-# Config Server Configuration

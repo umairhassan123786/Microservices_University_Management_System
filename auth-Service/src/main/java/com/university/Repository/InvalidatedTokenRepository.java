@@ -7,5 +7,4 @@ import java.util.List;
 public interface InvalidatedTokenRepository extends JpaRepository<InvalidatedToken, Long> {
     boolean existsByToken(String token);
     List<InvalidatedToken> findByExpiryDateBefore(Date currentDate);
-    void deleteByToken(String token);
 }

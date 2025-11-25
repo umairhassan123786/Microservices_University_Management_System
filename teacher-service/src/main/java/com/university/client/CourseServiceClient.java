@@ -16,7 +16,6 @@ public interface CourseServiceClient {
     @GetMapping("/api/courses/{courseId}/students")
     List<StudentDTO> getCourseStudents(@PathVariable("courseId") Long courseId);
 
-    // ✅ Change this to return List<CourseDTO> instead of List<Map>
     @GetMapping("/api/courses/teacher/{teacherId}")
     List<CourseDTO> getCoursesByTeacherId(@PathVariable("teacherId") Long teacherId);
 

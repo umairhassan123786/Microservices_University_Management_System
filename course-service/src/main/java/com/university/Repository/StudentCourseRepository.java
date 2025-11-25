@@ -23,18 +23,12 @@ public interface StudentCourseRepository extends JpaRepository<StudentCourse, Lo
 
     boolean existsByStudentIdAndCourseId(Long studentId, Long courseId);
 
-    Optional<StudentCourse> findByStudentIdAndCourseIdAndSemester(Long studentId, Long courseId, String semester);
-
-    @Query("SELECT c FROM Course c JOIN StudentCourse sc ON c.id = sc.courseId WHERE sc.studentId = :studentId")
+     @Query("SELECT c FROM Course c JOIN StudentCourse sc ON c.id = sc.courseId WHERE sc.studentId = :studentId")
     List<Course> findCoursesByStudentId(@Param("studentId") Long studentId);
 
     void deleteByStudentId(Long studentId);
 
     void deleteByCourseId(Long courseId);
-//    @Modifying
-//    @Transactional
-//    @Query("DELETE FROM StudentCourse sc WHERE sc.studentId = :studentId AND sc.courseId = :courseId")
-//    void deleteByStudentIdAndCourseId(@Param("studentId") Long studentId, @Param("courseId") Long courseId);
 
     @Modifying
     @Transactional

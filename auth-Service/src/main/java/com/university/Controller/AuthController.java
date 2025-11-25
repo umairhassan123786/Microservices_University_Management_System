@@ -71,14 +71,14 @@ public class AuthController {
 //    @GetMapping("/profile")
 //    public ResponseEntity<?> getLoggedInStudentProfile(@RequestHeader("Authorization") String authorizationHeader) {
 //        try {
-//            // ✅ Extract token from "Bearer <token>"
+//            //Extract token from "Bearer <token>"
 //            if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
 //                return ResponseEntity.badRequest().body(Map.of("error", "Missing or invalid Authorization header"));
 //            }
 //
 //            String token = authorizationHeader.substring(7);
 //
-//            // ✅ Call Auth Service to validate token & get user info
+//            // Call Auth Service to validate token & get user info
 //            Map<String, Object> userData = studentService.getUserDetailsFromAuth(token);
 //            if (userData == null || userData.get("userId") == null) {
 //                return ResponseEntity.badRequest().body(Map.of("error", "Invalid or expired token"));
@@ -86,7 +86,7 @@ public class AuthController {
 //
 //            Long userId = Long.parseLong(userData.get("userId").toString());
 //
-//            // ✅ Get student by userId
+//            //Get student by userId
 //            Optional<Student> student = studentService.getStudentByUserId(userId);
 //            return student.<ResponseEntity<?>>map(ResponseEntity::ok)
 //                    .orElseGet(() -> ResponseEntity.status(404).body(Map.of("error", "Student not found for this user")));

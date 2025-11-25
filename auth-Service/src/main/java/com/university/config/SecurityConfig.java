@@ -27,7 +27,7 @@
 //                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 //                .and()
 //                .authorizeRequests()
-//                // ✅ TEMPORARY: Allow everything for testing
+//                //  temporary ki sab allow hy
 //                .antMatchers("/**").permitAll()
 //                .and()
 //                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

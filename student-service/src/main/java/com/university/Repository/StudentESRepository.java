@@ -13,8 +13,4 @@ public interface StudentESRepository extends ElasticsearchRepository<StudentES, 
     List<StudentES> findByNameContainingIgnoreCase(String name);
 
     List<StudentES> findByDepartment(String department);
-
-    Optional<StudentES> findByRollNumber(String rollNumber);
-
-    List<StudentES> findByActiveTrue();
 }

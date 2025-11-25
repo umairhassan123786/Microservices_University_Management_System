@@ -16,8 +16,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class CourseController {
     private final CourseService courseService;
-    private final StudentCourseRepository studentCourseRepository; // ✅ Import add kiya
-
+    private final StudentCourseRepository studentCourseRepository;
     @GetMapping
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();

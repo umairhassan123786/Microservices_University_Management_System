@@ -8,7 +8,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = "com.university.client")
 public class AuthServiceApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(AuthServiceApplication.class, args);
     }

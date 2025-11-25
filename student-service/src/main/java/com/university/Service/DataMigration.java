@@ -32,11 +32,10 @@ public class DataMigration {
 
             for (Student student : studentRepository.findAll()) {
                 try {
-                    // ✅ Create proper StudentES object
                     StudentES studentES = new StudentES(
-                            student.getId().toString(),  // String ID
-                            student.getId(),             // studentId (Long)
-                            student.getUserId(),         // userId (Long)
+                            student.getId().toString(),
+                            student.getId(),
+                            student.getUserId(),
                             student.getName(),
                             student.getEmail(),
                             student.getRollNumber(),

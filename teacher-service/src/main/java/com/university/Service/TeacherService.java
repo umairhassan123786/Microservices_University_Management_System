@@ -109,8 +109,8 @@ public class TeacherService {
 
                         Map<String, Object> courseMap = new HashMap<>();
                         courseMap.put("id", course.getId());
-                        courseMap.put("name", course.getName());      // ✅ Now properly mapped
-                        courseMap.put("code", course.getCode());      // ✅ Now properly mapped
+                        courseMap.put("name", course.getName());
+                        courseMap.put("code", course.getCode());
                         courseMap.put("department", course.getDepartment());
                         courseMap.put("semester", course.getSemester());
                         courseMap.put("credits", course.getCredits());
@@ -192,7 +192,7 @@ public class TeacherService {
 //            attendance.setCourseId(courseId);
 //            attendance.setStatus(AttendanceStatus.valueOf(request.getStatus()));
 //            attendance.setDate(request.getDate());
-//            attendance.setRemarks(request.getRemarks()); // ✅ Add remarks
+//            attendance.setRemarks(request.getRemarks());
 //            attendance.setCreatedAt(LocalDate.now().atStartOfDay());
 //            attendance.setUpdatedAt(LocalDate.now().atStartOfDay());
 //
@@ -396,7 +396,8 @@ public class TeacherService {
             errorResponse.put("error", "Bulk attendance marking failed: " + e.getMessage());
             return errorResponse;
         }
-    }    public Map<String, Object> getTeacherCourseAttendance(Long teacherId, Long courseId) {
+    }
+    public Map<String, Object> getTeacherCourseAttendance(Long teacherId, Long courseId) {
         try {
             List<Map<String, Object>> teacherCourses = getTeacherCourses(teacherId);
             boolean hasAccess = teacherCourses.stream()

@@ -4,6 +4,7 @@
 - Java 17
 - Maven
 - Oracle Database
+- Kafka
 - ELK Stack (for centralized logging)
 
 ## Database Setup
@@ -69,13 +70,15 @@ mvn spring-boot:run
 
 ### Step 3: Verify Services
 - Service Discovery: http://localhost:8761
-- API Gateway: http://localhost:8080
+- API Gateway: http://localhost:8070
 - Auth Service: http://localhost:8081
 - Student Service: http://localhost:8082
 - Course Service: http://localhost:8083
 - Teacher Service: http://localhost:8084
 - Attendance Service: http://localhost:8085
-
+## Install Kafka 
+- The Registration process are using kafka .
+- The Kafka is used for register student,teacher to their service from auth-service and attendnace mark by teacher.
 ## Centralized Logging (ELK Stack)
 1. Install and start Elasticsearch, Logstash, and Kibana
 2. Configure Logstash to listen on port 5000

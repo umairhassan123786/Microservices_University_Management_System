@@ -11,4 +11,6 @@ public interface AuthServiceClient {
     TokenValidationResponse validateToken(@RequestBody TokenValidationRequest request);
     @PostMapping("/api/auth/validate-with-role")
     TokenValidationResponse validateTokenWithRole(@RequestBody TokenValidationRequest request);
+    @PostMapping("/api/auth/validate-with-privileges")
+    TokenValidationResponse validateTokenWithPrivileges(@RequestBody TokenValidationRequest request);
 }

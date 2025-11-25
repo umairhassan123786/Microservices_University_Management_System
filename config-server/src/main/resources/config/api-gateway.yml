@@ -11,7 +11,9 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/api/auth/**
+            - Path=/api/auth/**, /api/privileges/**
+          filters:
+            - StripPrefix=0
 
         - id: student-service
           uri: lb://student-service
